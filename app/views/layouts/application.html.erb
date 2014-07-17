@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TheAdvTraveller</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1><a href="landing_page">The Adventure Traveller</a></h1>
-<%= yield %>
-<hr>
-<div>
-	<h3>Gallery</h3>						
-	<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."	
-</div>
-<hr>
-<div>
-	<ul>
-		<li><a href="contact">Contact</a></li>
-		<li><a href="about">About</a></li>
-	</ul>
-</div>
-</body>
+	<head>
+		<title>TheAdvTraveller</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<header>
+			<div class="container header">
+			    <nav>
+			      <ul class="nav">
+			        <li><a href="index.html" id="nav-home">Home</a>
+					<li class="dropdown">
+						<a href="#" id="nav-about" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="about-company.html">About the company</a></li>
+							<li><a href="about-team.html">About the team</a></li>
+						</ul>
+					</li>
+					<li><a href="destinations.html" id="nav-destinations">Destinations</a>
+					<li><a href="contact.html" id="nav-contact">Contact</a>
+					<li><a href="signup.html" id="nav-signup">Login | Sign up</a>
+			      </ul>
+			    </nav>
+		    </div><!-- .container -->
+		</header>
+		<%= yield %>
+		<hr>
+		<div>
+			<h3>Gallery</h3>						
+			<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."	
+		</div>
+		<hr>
+		<footer>
+			<div class="container footer">
+				<nav>
+					<ul class="nav">
+						<li><a href="contact">Contact</a></li>
+						<li><a href="about">About</a></li>
+						<li><a href="" id="nav-faq">FAQ</a>
+						<li><a href="">Terms</a>
+						<li><a href="#privacy" data-toggle="modal" data-keyboard="true">Privacy</a>
+					</ul>
+				</nav>
+				<div class="modal fade" id="privacy" tabindex="-1">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal">&times;</button>
+								<h3>Privacy Policy</h3>
+							</div><!-- .modal-header -->
+							<div class="modal-body">
+								<p>We respect your privacy! We will not misuse nor sell any information provided to us. All of your information provided to us is for the express purpose of processing your order. By supplying such information, we will retain only the information needed to complete your order. Any information provided to us will not be shared with any other company or third party.</p>
+							</div><!-- .modal-body -->
+						</div><!-- .modal-content -->
+					</div><!-- .modal-dialog -->					
+				</div><!-- .modal -->
+			</div> <!-- .container footer -->
+		</footer>
+	</body>
 </html>
