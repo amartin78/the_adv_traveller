@@ -1,301 +1,297 @@
 a { 
-	font-weight: bold;
-    font-size: 1rem;
-    text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 a:link, a:visited { 
-	color: #fff;
-	text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 a:hover, a:active { 
-	color: #f00;
+  color: #f00;
 }
 
 body {
-	position: relative;
-	margin: 0;
-	/*background: url(../images/desert.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;*/
-	/*background-color: #def;*/
+  position: relative;
+  margin: 0;
 }
 footer {
-	clear: both;
+  clear: both;
 }
 
 header {
-	margin: 0 0 100px 0;
+  margin: 0 0 100px 0;
 }
 
 hr {
-	background: #ccc;
-	border: 0;
-	color: #eee;
-	height: 1px;
-	margin: 30px 0px;
+  background: #ccc;
+  border: 0;
+  color: #eee;
+  height: 1px;
+  margin: 30px 0px;
 }
 
 iframe {
-	clear: both;
+  clear: both;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 p {
-	text-align: justify;
+  text-align: justify;
 }
 
 table {
-	border: 2px solid;
+  border: 2px solid;
 }
 
 th {
-	padding: 20px;
-	border: 1px solid;
+  padding: 20px;
+  border: 1px solid;
 }
 
 td, tr {
-	padding: 20px;
-	border: 1px solid;
+  padding: 20px;
+  border: 1px solid;
 }
 
 ul {
-	text-align: center;
+  text-align: center;
 }
 
 #accordion h3 {
-	border-bottom: solid 1px #ddd;
-	margin: 2em 0 1em 0;
-	padding-bottom: 0.8em;
+  border-bottom: solid 1px #ddd;
+  margin: 2em 0 1em 0;
+  padding-bottom: 0.8em;
 }
 
 #accordion h3:first-child {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 #accordion .panel {
-	background: transparent;
-	border: 0;
-	box-shadow: none;
-	margin-bottom: 1em;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 1em;
 }
 
 #accordion .panel a:link, #accordion .panel a:visited {
-	color: #555;
-	text-transform: none;
-	font-size: 1em;
+  color: #555;
+  text-transform: none;
+  font-size: 1em;
 }
 
 #accordion .panel-body {
-	background: #ddd;
-	border-radius: 5px;
-	margin-top: 1em;
-	padding: 15px 20px;
+  background: #ddd;
+  border-radius: 5px;
+  margin-top: 1em;
+  padding: 15px 20px;
 }
 
 #accordion .panel-body p {
-	margin: 0;
+  margin: 0;
 }
 
 .checkbox {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .col-md-5 a {
-	text-transform: lowercase;
-	font-size: 1.5rem;
+  text-transform: lowercase;
+  font-size: 1.5rem;
 }
 
 #contact-form {
-	padding-bottom: 300px;
-	border: solid 1px;
+  padding-bottom: 300px;
+  border: solid 1px;
 }
 
 #contact-form  p {
-	text-align: center;
+  text-align: center;
 }
 
 #contact-form input[type="text"], input[type="email"], input[type="url"], select, textarea {
-	width: 200px;
+  width: 200px;
 }
 
 #contact-form input[type="submit"] {
-	margin-left: 135px;
-	width: 135px;
+  margin-left: 135px;
+  width: 135px;
 }
 
 #contact-form label {
-	margin-right: 10px;
-	text-align: right;
-	width: 60px;
+  margin-right: 10px;
+  text-align: right;
+  width: 60px;
 }
 
 #content {
-	clear: both;
+  clear: both;
 }
 
 .container {
-	width: 80%;
-	margin: 50px auto;
-	}h1, h2, h3, h4, h5, h6 {
-		text-align: center;
+  width: 80%;
+  margin: 50px auto;
+  }h1, h2, h3, h4, h5, h6 {
+	text-align: center;
 }
 
 .dropdown-menu ul, .dropdown-menu li, .dropdown-menu a {
-	padding: 5px;
-	border: 0;
-	margin: 0;
+  padding: 5px;
+  border: 0;
+  margin: 0;
 }
 
 .dropdown-menu li a {
-	color: #000;
-	font-weight: bold;
-    font-size: 1rem;
-    text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .dropdown-menu li a:hover {
-	background: transparent;
-	color: #f00;
+  background: transparent;
+  color: #f00;
 }
 
 .fb-like-box, .fb-share-button {
-	float: right;
-	margin: 0 0 25px 0;
+  float: right;
+  margin: 0 0 25px 0;
 }
 
 .footer .nav > li {
-	display: inline;
-	float: right;
-	padding: 5px 8px;
-	margin: 0;
-	background-color: #30507b;
-	border-left: 1px solid #000;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
+  display: inline;
+  float: right;
+  padding: 5px 8px;
+  margin: 0;
+  background-color: #30507b;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .footer p {
-	float: left;
+  float: left;
 }
 
 .footer .nav > li > a {
-	display: inline;
+  display: inline;
 }
 
 .footer .nav {
-	float: right;
-	clear: right;
+  float: right;
+  clear: right;
 }
 
 .grid-of-images a{
-	cursor:-webkit-zoom-in;
-	cursor:-moz-zoom-in;
-	cursor:zoom-in;
-	border: 0;
-	height:75px;
-	display:block;
-	float:left;
-	margin:0 5px 5px 0;
-	width:75px
+  cursor:-webkit-zoom-in;
+  cursor:-moz-zoom-in;
+  cursor:zoom-in;
+  border: 0;
+  height:75px;
+  display:block;
+  float:left;
+  margin:0 5px 5px 0;
+  width:75px
 }
 
 .grid-of-images a:hover{
-	opacity:.9
+  opacity:.9
 }
 
 .header .nav > li {
-	display: inline;
-	padding: 25px 10px;
-	margin: 0;
-	background-color: #30507b;
-	border-left: 1px solid #000;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
+  display: inline;
+  padding: 25px 10px;
+  margin: 0;
+  background-color: #30507b;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .header .nav > li > a {
-	display: inline;
+  display: inline;
 }
 
 #home #nav-home, #about #nav-about, #destinations #nav-destinations, #contact #nav-contact, #signup #nav-signup, #faq #nav-faq {
-	color: #468400;
+  color: #468400;
 }
 
 .lightbox img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 #logo {
-	float: left;
+  float: left;
 }
 
 #mc_embed_signup {
-    float: right;
-    width: 200px;
-    margin-right: 25px;
+  float: right;
+  width: 200px;
+  margin-right: 25px;
 }
 
 @media (max-width: 767px) {
   h1 { font-size: 2rem; }
   #myCarousel .container { 
-  	top: 0;
+	top: 0;
   }
 }
 
 .modal-header {
-	padding: 15px 20px;
+  padding: 15px 20px;
 }
 
 .modal-body {
-	padding: 20px 40px 120px 40px;
+  padding: 20px 40px 120px 40px;
 }
 
 #myCarousel {
-	box-shadow: 0 7px 10px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 7px 10px 3px rgba(0, 0, 0, 0.5);
 }
 
 #myCarousel .item {
-	max-height: 500px;
+  max-height: 500px;
 }
 
 #myCarousel .container {
-	left: 0;
-	position: absolute;
-	top: 270px;
+  left: 0;
+  position: absolute;
+  top: 270px;
 }
 
 #myCarousel h1, #myCarousel p {
-	color: #fff;
-	padding: 3px 0;
-	margin: 0 auto;
-	text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
-	width: 70%;
-	text-align: left;
+  color: #fff;
+  padding: 3px 0;
+  margin: 0 auto;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+  width: 70%;
+  text-align: left;
 }
 
 #myCarousel img {
-	width: 100%;
+  width: 100%;
 }
 
 .nav {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav > li:last-child {
-	border-right: 1px solid #000;
+  border-right: 1px solid #000;
 }
 
 .responsive-container {
-	position: relative;
-	height: 0; 
-	padding: 0 0 80% 0;
+  position: relative;
+  height: 0; 
+  padding: 0 0 80% 0;
 }
 
 .responsive-container iframe, .responsive-container object, .responsive-container embed {
@@ -307,18 +303,18 @@ ul {
 }
 
 .testimonials [class*="col"] {
-	margin-top: 10px;
-	text-align: center;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .testimonials [class*="col"] img:nth-child(2) {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 #top {
-	clear: both;
-	position: absolute;
-	top: 10px;
-	width: 100%;
-	z-index: 1;
+  clear: both;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  z-index: 1;
 }
