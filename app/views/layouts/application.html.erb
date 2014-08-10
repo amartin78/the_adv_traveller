@@ -1,108 +1,107 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>The Adventure Traveller</title>
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">		
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<%= csrf_meta_tags %>
-		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-		<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
-		<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-	</head>
-	<body id="">
-		<header id="">
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>	
-			<div class="container header">
-			    <nav>
-			      <ul class="nav">
-			        <li><a href="/pages/landing_page.html" id="nav-home">Home</a>
-					<li class="dropdown">
-						<a href="#" id="nav-about" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="about_company.html">About the company</a></li>
-							<li><a href="about_team.html">About the team</a></li>
-						</ul>
-					</li>
-					<li><a href="destinations.html" id="nav-destinations">Destinations</a>
-					<li><a href="contact.html" id="nav-contact">Contact</a>
-					<li><a href="signup.html" id="nav-signup">Login | Sign up</a>
-			      </ul>
-			    </nav>
-		    </div><!-- .container -->
-
-		</header>
-		<%= yield %>
-		<hr>
-		<footer>
-			<div class="container footer">
-				<div class="fb-like-box" data-href="https://www.facebook.com/natgeo" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true" data-share="true"></div>
-				<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
-				<nav>
-					<ul class="nav">
-						<li><a href="faq.html" id="nav-faq">FAQ</a>
-						<li><a href="http://www.google.es">Terms</a>
-						<li><a href="#privacy" data-toggle="modal" data-keyboard="true">Privacy</a>
-					</ul>
-				</nav>
-				<div class="modal fade" id="privacy" tabindex="-1">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button class="close" data-dismiss="modal">&times;</button>
-								<h3>Privacy Policy</h3>
-							</div><!-- .modal-header -->
-							<div class="modal-body">
-								<p>We respect your privacy! We will not misuse nor sell any information provided to us. All of your information provided to us is for the express purpose of processing your order. By supplying such information, we will retain only the information needed to complete your order. Any information provided to us will not be shared with any other company or third party.</p>
-							</div><!-- .modal-body -->
-						</div><!-- .modal-content -->
-					</div><!-- .modal-dialog -->					
-				</div><!-- .modal -->
-				<!-- Begin MailChimp Signup Form -->
-				<div id="mc_embed_signup">
-					<form action="http://onjumpstarter.us8.list-manage.com/subscribe/post?u=a0767ebdd4eab0f955b33d4cb&amp;id=c2ed91adda" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<label for="mce-EMAIL">Subscribe to our mailing list</label>
-						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email@address.com" required>
-					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-					    <div style="position: absolute; left: -5000px;"><input type="text" name="b_a0767ebdd4eab0f955b33d4cb_c2ed91adda" tabindex="-1" value=""></div>
-					    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info">
-					</form>
-				</div>
-				<!--End mc_embed_signup-->
-				<p>Copyright &copy; 2014 The Adventure Company</p>
-			</div><!-- .container -->
-		</footer>
-		<!--script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script-->
-		<script>
-		!function($){
-			$('.lightbox').magnificPopup({
-				delegate: 'a',
-				type: 'image',
-				gallery: { enabled: true}
-			});
-		}(window.jQuery);
-		</script>
-	</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Adventure Traveller</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <%= csrf_meta_tags %>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  </head>
+  <body id="">
+    <header id="">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>  
+      <div class="container header">
+        <nav>
+          <ul class="nav">
+            <li><a href="/pages/landing_page.html" id="nav-home">Home</a>
+            <li class="dropdown">
+            <a href="#" id="nav-about" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="about_company.html">About the company</a></li>
+              <li><a href="about_team.html">About the team</a></li>
+            </ul>
+          </li>
+          <li><a href="destinations.html" id="nav-destinations">Destinations</a>
+          <li><a href="contact.html" id="nav-contact">Contact</a>
+          <li><a href="signup.html" id="nav-signup">Login | Sign up</a>
+            </ul>
+          </nav>
+        </div><!-- .container -->
+    </header>
+    <%= yield %>
+    <hr>
+    <footer>
+      <div class="container footer">
+        <div class="fb-like-box" data-href="https://www.facebook.com/natgeo" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true" data-share="true"></div>
+        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
+        <nav>
+          <ul class="nav">
+            <li><a href="faq.html" id="nav-faq">FAQ</a>
+            <li><a href="http://www.google.es">Terms</a>
+            <li><a href="#privacy" data-toggle="modal" data-keyboard="true">Privacy</a>
+          </ul>
+        </nav>
+        <div class="modal fade" id="privacy" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h3>Privacy Policy</h3>
+              </div><!-- .modal-header -->
+              <div class="modal-body">
+                <p>We respect your privacy! We will not misuse nor sell any information provided to us. All of your information provided to us is for the express purpose of processing your order. By supplying such information, we will retain only the information needed to complete your order. Any information provided to us will not be shared with any other company or third party.</p>
+              </div><!-- .modal-body -->
+            </div><!-- .modal-content -->
+          </div><!-- .modal-dialog -->          
+        </div><!-- .modal -->
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="http://onjumpstarter.us8.list-manage.com/subscribe/post?u=a0767ebdd4eab0f955b33d4cb&amp;id=c2ed91adda" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <label for="mce-EMAIL">Subscribe to our mailing list</label>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email@address.com" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_a0767ebdd4eab0f955b33d4cb_c2ed91adda" tabindex="-1" value=""></div>
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info">
+          </form>
+        </div>
+        <!--End mc_embed_signup-->
+        <p>Copyright &copy; 2014 The Adventure Company</p>
+      </div><!-- .container -->
+    </footer>
+    <!--script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script-->
+    <script>
+    !function($){
+      $('.lightbox').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: { enabled: true}
+      });
+    }(window.jQuery);
+    </script>
+  </body>
 </html>
