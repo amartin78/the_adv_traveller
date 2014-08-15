@@ -1,0 +1,50 @@
+<% @body_id='destinations' %>
+<% @products.each do |product| %>
+  <% if product.id.even? %>
+    <div class="container product">
+      <div class="row-testimonials">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+          <h2><a href="/products/<%= product.id %>"><%= product.name %></a></h2>
+          <p><%= product.description %></p>
+        </div>
+      </div>
+      <div class="row-feautures">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <img src="<%= product.image_url %>" width="250px" height="200px">
+        </div>
+      </div>
+      <div>
+        <ul class="product left">
+          <li><%= link_to 'Show', product %>
+          <li><%= link_to 'Edit', edit_product_path(product) %>
+          <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </ul>
+      </div>
+    </div>
+  <% else %>
+    <div class="container product">
+      <div class="row-feautures">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <img src="<%= product.image_url %>" width="250px" height="200px">
+        </div>
+      </div>
+      <div class="row-testimonials">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+          <h2><a href="/products/<%= product.id %>"><%= product.name %></a></h2>
+          <p><%= product.description %></p>
+          <div>
+            <ul class="product right">
+              <li><%= link_to 'Show', product %>
+              <li><%= link_to 'Edit', edit_product_path(product) %>
+              <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+<div class="container product">
+  <%= link_to 'New Product', new_product_path %>
+</div>
+
