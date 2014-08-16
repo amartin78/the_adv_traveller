@@ -2,7 +2,7 @@
 <div class="container product">
   <div class="row-feautures">
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <img src="<%= @product.image_url %>" width="250px" height="200px">
+      <img src="<%= @product.image_src %>" width="250px" height="200px">
     </div>
   </div>
   <div class="row-testimonials">
@@ -10,6 +10,10 @@
       <h2><a><%= @product.name %></a></h2>
       <p><%= @product.description %></p>
       <div>
+        <ul class="product left">
+          <li>Months: <%= @product.months%>
+          <li>Price: £<%= @product.price %>
+        </ul>
         <ul class="product right">
           <%= link_to 'Edit', edit_product_path(@product) %> |
           <%= link_to 'Back', products_path %>
