@@ -14,7 +14,7 @@
           <div>
             <ul class="product p-left">
               <li>Months: <%= product.months %>
-              <li>Price: £<%= product.price %>
+              <li>Price: <%= number_to_currency(product.price, precision: 3, unit: '£') %>
             </ul>
             <ul class="product p-right">
               <li><%= link_to 'Show', product %>
