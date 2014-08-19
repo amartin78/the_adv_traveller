@@ -37,21 +37,20 @@
       <div class="container header">
         <nav>
           <ul class="nav">
-            <li><a href="/pages/landing_page.html" id="nav-home">Home</a>
+            <li><%= link_to 'Home', root_path, 'id'=>'nav-home' %>
             <li class="dropdown">
-            <a href="#" id="nav-about" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/pages/about_company.html">About the company</a></li>
-              <li><a href="/pages/about_team.html">About the team</a></li>
-            </ul>
-          </li>
-          <!-- <li><a href="/products" id="nav-destinations">Destinations</a> -->
-          <li><%= link_to 'Destinations', products_path %>
-          <li><a href="/pages/contact" id="nav-contact">Contact</a>
-          <li><a href="/pages/signup.html" id="nav-signup">Login | Sign up</a>
-            </ul>
-          </nav>
-        </div><!-- .container -->
+              <%= link_to raw('About<span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-about' %>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'About the Company', about_company_path %>
+                <li><%= link_to 'About the Team', about_team_path %>
+              </ul>
+            </li>
+            <li><%= link_to 'Destinations', products_path, 'id'=>'nav-destinations' %>
+            <li><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
+            <li><%= link_to 'Login | Signup', signup_path, 'id'=>'nav-signup' %>
+          </ul>
+        </nav>
+      </div><!-- .container -->
     </header>
     <%= yield %>
     <hr>
@@ -61,9 +60,9 @@
         <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
         <nav>
           <ul class="nav">
-            <li><a href="/pages/faq.html" id="nav-faq">FAQ</a>
-            <li><a href="http://www.google.es">Terms</a>
-            <li><a href="#privacy" data-toggle="modal" data-keyboard="true">Privacy</a>
+            <li><%= link_to 'FAQ', faq_path, 'id'=>'nav-faq' %>
+            <li><%= link_to 'Terms', "#" %>
+            <li><%= link_to 'Privacy', "#", data: {target: "#privacy", toggle: "modal", keyboard: "true"}  %>
           </ul>
         </nav>
         <div class="modal fade" id="privacy" tabindex="-1">
