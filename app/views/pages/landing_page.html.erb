@@ -41,12 +41,7 @@
   <div class="row testimonials">
     <h1>SPECIAL OFFERS</h1>
     <hr>
-    <% @featured_products.each do |p| %>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 
-        <%= link_to image_tag("#{p.image_src}", {:class=>'img-responsive', :alt=>"#{p.name}"}), product_path(p.id) %>
-        <h3><%= link_to "#{p.name}", product_path(p.id) %></h3>
-      </div><!-- .col-lg-4  -->
-    <% end %>
+    <%= render 'featured_product' %>
   </div><!-- .row .testimonials -->
   <hr>
   <div class="row feature">
