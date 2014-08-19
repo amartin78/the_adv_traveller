@@ -25,9 +25,9 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   </head>
   <body id="<%= @body_id %>">
-    <%= render 'header' %>
+    <%= render '/layouts/header' %>
     <%= yield %>
-    <%= render 'footer' %>
+    <%= render '/layouts/footer' %>
     <script>
     !function($){
       $('.lightbox').magnificPopup({
