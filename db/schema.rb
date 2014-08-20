@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817132024) do
+ActiveRecord::Schema.define(version: 20140820172212) do
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140817132024) do
     t.string   "months"
     t.decimal  "price",       precision: 8, scale: 2
     t.string   "image_src"
+    t.boolean  "featured",                            default: false
   end
 
 end

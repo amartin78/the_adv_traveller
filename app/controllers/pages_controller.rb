@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def landing_page
-    @featured_products = [ (Product.find_by name: 'Tanzania'), (Product.find_by name: 'Atacama Desert'), (Product.find_by name: 'Alaska') ]
+   @featured_products = Product.where(featured: true).all
   end
 
   def contact
