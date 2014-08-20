@@ -4,17 +4,21 @@ Rails.application.routes.draw do
 
   root 'pages#landing_page'
 
-  get '/about_company', to: 'pages#about_company'
+  get 'about_company', to: 'pages#about_company'
 
-  get '/about_team', to: 'pages#about_team'
+  get 'about_team', to: 'pages#about_team'
 
-  get '/destinations', to: 'pages#destinations'
+  get 'destinations', to: 'pages#destinations'
 
-  get '/contact', to: 'pages#contact'
+  get 'contact', to: 'pages#contact'
 
-  get '/signup', to: 'pages#signup'
+  get 'signup', to: 'pages#signup'
 
-  get '/faq', to: 'pages#faq'
+  get 'faq', to: 'pages#faq'
+
+  get 'form_input', to: 'form_example#form_input'
+
+  get 'form_output', to: 'form_example#form_output'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
