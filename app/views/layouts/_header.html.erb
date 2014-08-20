@@ -23,5 +23,12 @@
         <li><%= link_to 'Login | Signup', signup_path, 'id'=>'nav-signup' %>
       </ul>
     </nav>
-  </div><!-- .container -->
+    <% flash.each do |key, value| %>
+      <% if key == 'alert' %>
+        <div class="alert alert-danger message"><%=value%></div>
+      <% elsif key == 'notice' %>
+        <div class="alert alert-success message"><%=value%></div>
+      <% end %>
+    <% end %>
+  </div><!-- .container -->  
 </header>
