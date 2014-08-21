@@ -48,15 +48,15 @@
           <h2>Send us a message</h2>
           <p>If you have any questions or comments, contact us using the form below.</p>
           <p><%= label_tag(:name, "Name") %></p>
-          <p><%= text_field_tag(:name, nil,{placeholder:'Full Name'}) %></p>
+          <p><%= text_field_tag(:name, nil,{ placeholder:'Full Name' }) %></p>
           <p><%= label_tag(:email, "Email") %></p>
-          <p><%= text_field_tag(:email) %></p>
+          <p><%= text_field_tag(:email, nil,{ placeholder:'Email address' }) %></p>
           <p><%= label_tag(:website, "Website") %></p>
-          <p><%= text_field_tag(:website) %></p>
+          <p><%= text_field_tag(:website, nil,{ placeholder:'URL' }) %></p>
           <p><%= label_tag(:subject, "Subject") %></p>
-          <p><%= text_field_tag(:subject) %></p>
+          <p><%= text_field_tag(:subject, nil,{ placeholder:'Issue' }) %></p>
           <p><%= label_tag(:message, "Comments") %></p>
-          <p><%= text_area_tag(:message, nil, size: "60x10") %></p>
+          <p><%= text_area_tag(:message, nil, { size: "60x10", placeholder: 'Some comments or questions...' }) %></p>
           <p><%= submit_tag("Submit", {class:'btn btn-success'}) %></p>
         <% end %>
       </div><!-- .col-xs-7 .col-sm-7 .col-md-7 .col-lg-7 -->

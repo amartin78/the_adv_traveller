@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'faq', to: 'pages#faq'
 
-  # get 'form_input', to: 'form_example#form_input'
+  get 'form_input', to: 'form_example#form_input'
 
   get 'form_output', to: 'form_example#form_output'
 
