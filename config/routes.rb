@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'destinations', to: 'pages#destinations'
 
-  get 'contact', to: 'pages#contact'
+  get 'contact', to: 'contact#form_in'
 
   get 'signup', to: 'pages#signup'
 
@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   get 'form_input', to: 'form_example#form_input'
 
   get 'form_output', to: 'form_example#form_output'
+
+  get 'form_in', to: 'contact#form_in'
+
+  post 'form_out', to: 'contact#form_out'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

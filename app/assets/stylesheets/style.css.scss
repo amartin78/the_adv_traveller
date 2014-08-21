@@ -109,26 +109,30 @@ ul {
 }
 
 #contact-form {
-  padding-bottom: 300px;
+  clear: both;
+  padding-bottom: 20px;
   border: solid 1px;
 }
 
 #contact-form  p {
-  text-align: center;
+  margin-left: 30px;
+  text-align: left;
 }
 
-#contact-form input[type="text"], input[type="email"], input[type="url"], select, textarea {
-  width: 200px;
+#contact-form input[type="text"], input[type="email"], input[type="url"], select {
+  width: 250px;
+  }textarea{
+    width: 320px;
 }
 
 #contact-form input[type="submit"] {
-  margin-left: 135px;
+  margin-left: 180px;
   width: 135px;
 }
 
 #contact-form label {
   margin-right: 10px;
-  text-align: right;
+  text-align: left;
   width: 60px;
 }
 
