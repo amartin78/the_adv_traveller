@@ -1,0 +1,19 @@
+<% @body_id = 'blog' %>
+<div class="content">
+  <div class="container">
+    <% @articles.each do |article| %>
+      <div class="row-testimonials">
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+          <ul class="article a-left">
+            <li><%= link_to article.title, article %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="container article">
+    <ul class="article a-left">
+      <li><%= link_to 'New Article', new_article_path %></li>
+    </ul>   
+  </div>
+ </div> 

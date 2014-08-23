@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :products
+  resources :products, :articles
 
   root 'pages#landing_page'
 
@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
   get 'about_team', to: 'pages#about_team'
 
-  get 'destinations', to: 'pages#destinations'
+  get 'destinations', to: 'products#index'
 
   get 'contact', to: 'contact#form_in'
+
+  post 'form_out', to: 'contact#form_out'
 
   get 'signup', to: 'pages#signup'
 
@@ -20,9 +22,8 @@ Rails.application.routes.draw do
 
   get 'form_output', to: 'form_example#form_output'
 
-  # get 'form_in', to: 'contact#form_in'
+  get 'blog', to: 'articles#index'
 
-  post 'form_out', to: 'contact#form_out'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

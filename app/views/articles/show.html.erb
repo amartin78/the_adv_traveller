@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="container article">
+    <div class="row-feature">
+      <div class="col-xs-7 col-sm-7 col-md-7 col-lg7">
+        <h2><%= @article.title %></h2>
+        <div>
+          <ul class="article">
+            <li>By: <%= @article.author %></li>
+            <li><%= @article.date %></li>
+          </ul>
+        </div>
+        <p><%= @article.body %></p>
+        <ul class="article a-right">
+          <li><%= link_to 'Edit', edit_article_path(@article) %></li> |
+          <li><%= link_to 'Delete', @article, method: :delete, data: {confirm: 'Are you sure?'} %></li> |
+          <li><%= link_to 'Back', articles_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
