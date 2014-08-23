@@ -1,6 +1,7 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .a-left {
   float: left;
   padding-left: 0;
@@ -28,14 +29,22 @@
   font-size: 2rem;
 }
 
+.article hr {
+  padding: 0;
+  margin: 10px 0 20px 0;
+}
+
 .article li {
   display: inline;
   padding: 5px 8px 5px 0;
 }
 
+.article .modal-body {
+  padding-bottom: 60px;
+}
+
 .article p {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .article ul {
@@ -46,3 +55,8 @@
   display: inline;
   list-style-type: none;
 }
+
+.panel-body ul > li {
+  text-align: left;
+}
+

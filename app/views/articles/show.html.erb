@@ -1,20 +1,29 @@
 <div class="content">
   <div class="container article">
     <div class="row-feature">
-      <div class="col-xs-7 col-sm-7 col-md-7 col-lg7">
-        <h2><%= @article.title %></h2>
-        <div>
-          <ul class="article">
-            <li>By: <%= @article.author %></li>
-            <li><%= @article.date %></li>
-          </ul>
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg8">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h2 class="panel-title"><%= @article.title %><span class="a-right glyphicon glyphicon-plane"></span></h2>
+          </div>
+          <div class="panel-body">
+            <ul class="article">
+              <li>By: <%= @article.author %></li>
+              <li><span class="glyphicon glyphicon-calendar"></span></li>
+              <li><%= @article.date %></li>
+            </ul>
+             <hr class="article">
+             <p><%= @article.body %></p>
+          </div>
+          
+          <div class="panel-footer">
+            <ul>
+              <li><%= link_to 'Edit', edit_article_path(@article) %></li> |
+              <li><%= link_to 'Delete', @article, method: :delete, data: {confirm: 'Are you sure?'} %></li> |
+              <li><%= link_to 'Back', articles_path %></li>
+            </ul>
+          </div>
         </div>
-        <p><%= @article.body %></p>
-        <ul class="article a-right">
-          <li><%= link_to 'Edit', edit_article_path(@article) %></li> |
-          <li><%= link_to 'Delete', @article, method: :delete, data: {confirm: 'Are you sure?'} %></li> |
-          <li><%= link_to 'Back', articles_path %></li>
-        </ul>
       </div>
     </div>
   </div>
