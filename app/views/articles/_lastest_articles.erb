@@ -1,0 +1,18 @@
+ <hr>
+ <div class="row-testimonials">
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h2 class="panel-title">Lastest Articles</h2>
+      </div>
+      <div class="panel-body">
+        <% Article.order(updated_at: :desc).limit(3).each do |article| %>
+        <% #@articles.all.each do |article|%>
+          <ul class="list-group">
+            <li class="list-group-item"><%= link_to article.title, article %></li>
+          </ul>
+        <% end %> 
+      </div>   
+    </div>
+  </div> <!-- col-xs-8 col-sm-8 col-md-8 col-lg-8 -->
+</div> <!-- row-testimonials -->

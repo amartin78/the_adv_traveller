@@ -10,12 +10,11 @@
             <ul class="article">
               <li>By: <%= @article.author %></li>
               <li><span class="glyphicon glyphicon-calendar"></span></li>
-              <li><%= @article.date %></li>
+              <li><%= @article.updated_at.strftime( "%A, %d %b %Y %H:%M" ) %></li>
             </ul>
              <hr class="article">
              <p><%= @article.body %></p>
           </div>
-          
           <div class="panel-footer">
             <ul>
               <li><%= link_to 'Edit', edit_article_path(@article) %></li> |
