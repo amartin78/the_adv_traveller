@@ -10,7 +10,6 @@ end
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
-	gem 'will_paginate', '~>3.0'
 end
 #Will-paginate
 gem 'will_paginate', '~>3.0'
