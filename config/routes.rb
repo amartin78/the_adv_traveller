@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
-  resources :products, :articles
+  resources :products do
+    resources :testimonials
+  end
+  resources :articles do
+    resources :comments
+  end
 
   root 'pages#landing_page'
 

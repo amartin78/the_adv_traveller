@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+
+  has_many :testimonials
+  	
   validates :name, :description, :image_src, :price, :months, presence: true
   validates :name, length: { maximum: 15 }
   validates :description, length: { in: 20..200 }

@@ -1,0 +1,18 @@
+<%= form_for([@product, @product.testimonials.build]) do |t| %>
+  <p><h2>New Testimonial</h2></p>
+  <p>
+    <%= t.label :name %><br>
+    <%= t.text_field :name %>
+  </p>
+  <p>
+    <%= t.label :email  %><br>
+    <%= t.text_field :email %>
+  </p>
+  <p>
+    <%= t.label :body %><br>
+    <%= t.text_area :body %>
+  </p>
+  <p>
+    <%= t.submit %>
+  </p>
+<% end %>
