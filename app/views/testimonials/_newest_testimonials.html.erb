@@ -1,0 +1,17 @@
+ <div class="row-testimonials">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <% unless Product.first.testimonials.first.nil? %>
+      <h3>Testimonials</h3>
+      <hr>
+      <% Product.first.testimonials.order(updated_at: :desc).limit(2).each do |testimonial| %>
+        <% unless testimonial.nil? %>
+          <p><strong>Name:</strong>
+          <%= testimonial.name %></p>
+          <p><strong>Testimonial:</strong>
+          <%= testimonial.body %></p>
+          <hr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div> <!-- col-xs-5 col-sm-5 col-md-5 col-lg-5 -->
+</div>

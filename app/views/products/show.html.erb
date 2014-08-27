@@ -17,17 +17,27 @@
           <%= link_to 'Edit', edit_product_path(@product) %> |
           <%= link_to 'Back', products_path %>
         </ul>
-        <p><%= link_to 'Add Testimonial', new_product_testimonial_path(@product) %></p>
+        
       </div>
     </div>
-    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-      <%= @product.testimonials.each do |testimonial| %>
-        <p><strong>Name:</strong>
-        <%= testimonial.name %></p>
-        <p><strong>Testimonial:</strong>
-        <%= testimonial.body %></p>
-      <% end %>
-    </div> <!-- col-xs-9 col-sm-9 col-md-9 col-lg-9 -->
-
+    <div class="row-testimonials">
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        <p><%= link_to 'Add Testimonial', new_product_testimonial_path(@product) %></p>
+        <% unless @product.testimonials.first.nil? %>
+          <h2>Testimonials</h2>
+          <hr>
+          <% @product.testimonials.order(updated_at: :desc).each do |testimonial| %>
+            <% unless testimonial.nil? %>
+              <p><strong>Name:</strong>
+              <%= testimonial.name %></p>
+              <p><strong>Testimonial:</strong>
+              <%= testimonial.body %></p>
+              <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
+              <hr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div> <!-- col-xs-9 col-sm-9 col-md-9 col-lg-9 -->
+    </div>
   </div>
 </div>
