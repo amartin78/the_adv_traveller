@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
   #GET /articles
   def index
     @articles = Article.paginate(:page => params[:page], :per_page => 4)
-    @article = Article.new
   end
 
   #GET /articles/1
@@ -13,7 +12,7 @@ class ArticlesController < ApplicationController
 
   #GET /articles/new 
   def new
-    
+    @article = Article.new
   end
 
   #GET /articles/1/edit
