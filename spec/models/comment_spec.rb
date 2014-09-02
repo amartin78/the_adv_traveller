@@ -5,9 +5,7 @@ describe Comment do
 
   context "All attributes are present" do 
     before { 
-      @article = Article.create(title: "Travel...", author: "David", date: "01/09/2014", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
-      @comment = @article.comments.build(commenter: "James", body: "Mauris placerat eleifend leo.")
+      @comment = build(:comment)
     }
     it "should be valid" do 
       expect(@comment).to be_valid
@@ -16,9 +14,7 @@ describe Comment do
 
   context "One attribute is not present" do 
     before { 
-      @article = Article.create(title: "Travel...", author: "David", date: "01/09/2014", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
-      @comment = @article.comments.build(commenter: "James", body: "")
+      @comment = build(:comment, body: "")
     }
     it "should not be valid" do 
       expect(@comment).not_to be_valid

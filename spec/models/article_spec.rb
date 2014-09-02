@@ -5,8 +5,7 @@ describe Article do
   
   context "All attributes must be present" do
     before {
-      @article = Article.new(title: "Travel...", author: "James", date: "01/09/2014", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
+      @article = build(:article)
     }
     it "should be valid" do
       expect(@article).to be_valid
@@ -15,8 +14,7 @@ describe Article do
 
   context "One of the attributes is empty" do
     before {
-      @article = Article.new(title: "Travel...", author: "", date: "01/09/2014", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
+      @article = build(:article, author: "")
     }
     it "should not be valid" do
       expect(@article).not_to be_valid
@@ -25,10 +23,8 @@ describe Article do
 
   context "There is two articles with the same title" do
     before {
-      @article1 = Article.create(title: "Travel...", author: "David", date: "01/09/2014", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
-      @article2 = Article.create(title: "Travel...", author: "John", date: "01/09/2014", 
-        body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
+      @article1 = create(:article)
+      @article2 = build(:article)
     }
     it "should not be valid" do
       expect(@article2).not_to be_valid
@@ -37,8 +33,7 @@ describe Article do
 
   context "Title attribute length is longer than expected" do
     before{
-      @article = Article.new(title: "Travel...Vestibulum erat wisi, condimentum sed.", author: "David", date: "01/09/2014", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
+      @article = build(:article, title: "Travel...Vestibulum erat wisi, condimentum sed.")
     }
     it "shoud not be valid" do
       expect(@article).not_to be_valid
@@ -47,8 +42,7 @@ describe Article do
 
   context "Author attribute length is longer than expected" do
     before{
-      @article = Article.new(title: "Roma", author: "David..............................", date: "01/09/2014", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
+      @article = build(:article, author: "David..............................")
     }
     it "shoud not be valid" do
       expect(@article).not_to be_valid
@@ -57,8 +51,7 @@ describe Article do
 
   context "Body attribute length is shorter than expected" do
     before{
-      @article = Article.new(title: "Roma", author: "David", date: "01/09/2014", 
-      body: "Aenean...")
+      @article = build(:article, body: "Aenean...")
     }
     it "shoud not be valid" do
       expect(@article).not_to be_valid
@@ -67,8 +60,7 @@ describe Article do
 
   context "Date attribute length is shorter than expected" do
     before{
-      @article = Article.new(title: "Roma", author: "David", date: "2014-01-999", 
-      body: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.")
+      @article = build(:article, date: "2014-01-999")
     }
     it "shoud not be valid" do
       expect(@article).not_to be_valid
