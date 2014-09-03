@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
 
+  attr_accessible :title, :author, :date, :body
+
   has_many :comments
 
   validates :title, :author, :date, :body, presence: true

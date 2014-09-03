@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
+  include ActiveModel::MassAssignmentSecurity
+
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+
+  attr_protected :title, :author, :date, :body
 
   #GET /articles
   def index
@@ -21,7 +25,7 @@ class ArticlesController < ApplicationController
 
   #POST /articles
   def create
-    @article = Article.new(article_params)
+    @article = Article.new(params[:article])
 
     respond_to do |format|
       if @article.save
@@ -35,7 +39,7 @@ class ArticlesController < ApplicationController
   #PATCH/PUT /articles/1
   def update
     respond_to do |format|
-      if @article.update(article_params)
+      if @article.update(params[:article])
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
@@ -58,9 +62,4 @@ class ArticlesController < ApplicationController
     def set_article
       @article = Article.find(params[:id])
     end
-
-    def article_params
-      params.require(:article).permit(:title, :author, :date, :body)
-    end
-
 end

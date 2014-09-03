@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, :set_product, only: [:show, :edit, :update, :destroy]
-
+  include ActiveModel::MassAssignmentSecurity
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  attr_protected :name, :description, :image_src, :price, :months, :featured
+  
   # GET /products
   # GET /products.json
   def index
@@ -24,7 +27,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(params[:product])
 
     respond_to do |format|
       if @product.save
@@ -41,7 +44,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
-      if @product.update(product_params)
+      if @product.update_attributes(params[:product])
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
@@ -68,7 +71,8 @@ class ProductsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:name, :description, :image_src, :price, :months, :featured)
-    end
+    # def product_params
+    #   params.require(:product).permit(:name, :description, :image_src, :price, :months, :featured)
+    # end
+
 end

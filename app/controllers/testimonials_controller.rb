@@ -1,4 +1,7 @@
 class TestimonialsController < ApplicationController
+  include ActiveModel::MassAssignmentSecurity
+
+  attr_protected :name, :email, :body
 
   def new
     @product = Product.find(params[:product_id])
@@ -6,7 +9,7 @@ class TestimonialsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    @testimonial = @product.testimonials.create(testimonial_params)
+    @testimonial = @product.testimonials.create(params[:testimonial])
     redirect_to product_path(@product)
   end
 
@@ -16,11 +19,5 @@ class TestimonialsController < ApplicationController
     @testimonial.destroy
     redirect_to product_path(@product)
   end
-
-  private
-
-    def testimonial_params
-      params.require(:testimonial).permit(:name, :email, :body, :product_id)
-    end
 
 end

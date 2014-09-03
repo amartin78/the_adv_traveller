@@ -26,6 +26,9 @@ group :development, :test do
   gem 'spork-rails'
 end
 
+#Old gem protected_attributes
+gem 'protected_attributes'
+
 #Devise
 gem 'devise'
 

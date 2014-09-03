@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
+  include ActiveModel::MassAssignmentSecurity
+
+  attr_protected :commenter, :body
 
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
+    @comment = @article.comments.create(params[:comment])
     redirect_to article_path(@article)
   end
 
@@ -12,10 +15,5 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to article_path(@article)
   end
-
-  private
-    def comment_params
-      params.require(:comment).permit(:commenter, :body)
-    end
 
 end
