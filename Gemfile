@@ -9,8 +9,9 @@ group :development do
 	gem 'guard-spork'
 end
 
-group :test do
-	end
+group :test, :darwin do
+	gem 'rb-fsevent'
+end
 
 group :production do
 	gem 'pg'
@@ -20,7 +21,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~>3.0.0'
   gem 'factory_girl_rails', '~>4.0'
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'
   gem 'spork-rails'
 end
