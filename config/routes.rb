@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :users, :path => '', :path_names => { :sign_in=>'login', :sign_out=>'logout' }
+  
   resources :products do
     resources :testimonials
   end
@@ -18,8 +20,6 @@ Rails.application.routes.draw do
   get 'contact', to: 'contact#form_in'
 
   post 'form_out', to: 'contact#form_out'
-
-  get 'signup', to: 'pages#signup'
 
   get 'faq', to: 'pages#faq'
 

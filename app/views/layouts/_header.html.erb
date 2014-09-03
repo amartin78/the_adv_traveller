@@ -20,9 +20,21 @@
         </li>
         <li><%= link_to 'Destinations', destinations_path, 'id'=>'nav-destinations' %>
         <li><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
-        <li><%= link_to 'Login | Signup', signup_path, 'id'=>'nav-signup' %>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>
+        <% else %>
+          <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %>|
+          <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
+        <% end %>
       </ul>
+      <div class="login">
+      <% if user_signed_in? %>
+        <p>You are logged in as: <%= current_user.email %></p>
+      <% end %>
+    </div>
     </nav>
+    
+    
     <% flash.each do |key, value| %>
       <% if key == 'alert' %>
         <div class="alert alert-danger message"><%=value%></div>

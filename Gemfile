@@ -6,6 +6,7 @@ gem 'rails', '4.1.2'
 # Use sqlite3 as the database for Active Record
 group :development do
 	gem 'sqlite3'
+	gem 'guard-spork'
 end
 
 group :test do
@@ -19,7 +20,13 @@ end
 group :development, :test do
   gem 'rspec-rails', '~>3.0.0'
   gem 'factory_girl_rails', '~>4.0'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'spork-rails'
 end
+
+#Devise
+gem 'devise'
 
 #Will-paginate
 gem 'will_paginate', '~>3.0'

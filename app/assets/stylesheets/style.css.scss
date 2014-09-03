@@ -256,12 +256,20 @@ ul {
   color: #f00;
 }
 
-#home #nav-home, #about #nav-about, #destinations #nav-destinations, #contact #nav-contact, #signup #nav-signup, #faq #nav-faq, #blog #nav-blog {
+#home #nav-home, #about #nav-about, #destinations #nav-destinations, #contact #nav-contact, #signup #nav-signup, #signin #nav-signin, 
+#signout #nav-signout, #faq #nav-faq, #blog #nav-blog {
   color: #468400;
 }
 
 .lightbox img {
   max-width: 100%;
+}
+
+.login {
+  float: right;
+  margin-top: 50px;
+  margin-right: 225px;
+  /*color: #fff;*/
 }
 
 #logo {
@@ -354,4 +362,8 @@ ul {
   position: absolute;
   width: 100%;
   z-index: 1;
+}
+
+#top .login {
+  color: #fff;
 }
