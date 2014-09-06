@@ -16,7 +16,7 @@ describe ProductsController do
     }
     it "should display correct data" do 
       post :create, id: @product
-      expect(request.status).to eq '302'
+      expect(request.status).to eq '30'
     end
   end
 

@@ -26,11 +26,18 @@ group :development, :test do
   gem 'spork-rails'
 end
 
+
 #Old gem protected_attributes
 gem 'protected_attributes'
 
 #Devise
 gem 'devise'
+
+#Gem cancancan
+gem 'cancancan', '1.9'
+
+#Gem rails_admin
+gem 'rails_admin'
 
 #Will-paginate
 gem 'will_paginate', '~>3.0'

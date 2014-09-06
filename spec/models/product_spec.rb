@@ -5,8 +5,7 @@ describe Product do
 
   context "All attributes are present" do 
     before { 
-      # @product = build(:product)
-      @product = Product.new(product_params)
+      @product = build(:product)
     }
     it "shoud be valid" do
       expect(@product).to be_valid

@@ -266,10 +266,11 @@ ul {
 }
 
 .login {
+  display: inline;
+  list-style: none;
   float: right;
   margin-top: 50px;
   margin-right: 225px;
-  /*color: #fff;*/
 }
 
 #logo {
