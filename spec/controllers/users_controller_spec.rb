@@ -7,25 +7,24 @@ describe UsersController do
     @user = create(:user)
   end
 
-  context "User object has been created" do 
-    it "It should have the correct id value" do
-        expect(@user.id).to eq 1 
-    end
-  end 
-
   describe "GET SHOW" do
-    context "user is logged in" do 
 
+    context "user is logged in" do 
       before do
-        session[:user_id] = @user.id
-      end
-      
+        sign_in :user, @user
+      end     
       it "should load the correct user details" do 
         get :show, id: @user
-        expect(assigns(:user)).to eq @user 
-        
+        expect(response.status).to eq 200
+        expect(assigns(:user)).to eq @user
       end
+    end
 
+    context "User is not logged in" do
+      it "should redirect to login" do
+        get :show, id: @user
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
   end
 end

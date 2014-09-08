@@ -31,6 +31,10 @@ class Ability
 
     user ||= User.new
     can :manage, User, id: user.id
+    can :manage, Product
+    can :manage, Article
+    can :manage, Comment
+    can :manage, Testimonial
     if user.is_admin
       can :access, :rails_admin
       can :dashboard
