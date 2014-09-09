@@ -32,11 +32,12 @@ describe ProductsController do
     context "logged in user creates a product" do 
       before do
         sign_in :user, @user
-        @product1, @product2 = create(:product), create(:product)
+        @product1 = create(:product)
+        @product2 = create(:product)
       end
       it "should display correct data" do
         get :index
-        expect(assigns(:products)).to match_array([@product1, @product2])
+        expect(assigns(:products)).to match_array([@product1])
       end
     end
   end

@@ -29,15 +29,14 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
+
+
     user ||= User.new
-    can :manage, User, id: user.id
-    can :manage, Product
-    can :manage, Article
-    can :manage, Comment
-    can :manage, Testimonial
-    if user.is_admin
-      can :access, :rails_admin
-      can :dashboard
+    if user.is_admin?
+        can :manage, :all
+    else
+        can :read, :all
+        can :manage, user
     end
   end
 end

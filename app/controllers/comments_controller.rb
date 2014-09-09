@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
   include ActiveModel::MassAssignmentSecurity
 
   attr_protected :commenter, :body
-
+  load_and_authorize_resource
+  
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(params[:comment])

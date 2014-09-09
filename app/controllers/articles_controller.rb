@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   include ActiveModel::MassAssignmentSecurity
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   attr_protected :title, :author, :date, :body
 

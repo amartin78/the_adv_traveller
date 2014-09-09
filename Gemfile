@@ -26,6 +26,8 @@ group :development, :test do
   gem 'spork-rails'
 end
 
+#Rollbar
+gem 'rollbar', '~>1.0.0'
 
 #Old gem protected_attributes
 gem 'protected_attributes'

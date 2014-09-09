@@ -2,6 +2,7 @@ class TestimonialsController < ApplicationController
   include ActiveModel::MassAssignmentSecurity
 
   attr_protected :name, :email, :body
+  load_and_authorize_resource
 
   def new
     @product = Product.find(params[:product_id])
