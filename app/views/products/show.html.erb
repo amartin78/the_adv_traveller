@@ -27,14 +27,24 @@
         <% unless @product.testimonials.first.nil? %>
           <h2>Testimonials</h2>
           <hr>
-          <% @product.testimonials.order(updated_at: :desc).each do |testimonial| %>
-            <% unless testimonial.nil? %>
-              <p><strong>Name:</strong>
-              <%= testimonial.name %></p>
-              <p><strong>Testimonial:</strong>
-              <%= testimonial.body %></p>
-              <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
-              <hr>
+          <% cache(cache_key_for_testimonials) do %>
+            <% @product.testimonials.order(updated_at: :desc).each do |testimonial| %>
+              <% unless testimonial.nil? %>
+                <p>
+                  <strong>Name:</strong>
+                  <% cache(testimonial) do %>
+                    <%= testimonial.name %>
+                  <% end %>
+                </p>
+                <p>
+                <strong>Testimonial:</strong>
+                <% cache(testimonial) do %>
+                  <%= testimonial.body %>
+                <% end %>
+                </p>
+                <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
+                <hr>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>

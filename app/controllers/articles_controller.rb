@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   include ActiveModel::MassAssignmentSecurity
 
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
   attr_protected :title, :author, :date, :body
@@ -58,9 +57,4 @@ class ArticlesController < ApplicationController
     end
   end
 
-  private
-
-    def set_article
-      @article = Article.find(params[:id])
-    end
 end

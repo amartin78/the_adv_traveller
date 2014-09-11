@@ -26,6 +26,9 @@ group :development, :test do
   gem 'spork-rails'
 end
 
+#Dalli
+gem 'dalli'
+
 #Rollbar
 gem 'rollbar', '~>1.0.0'
 
