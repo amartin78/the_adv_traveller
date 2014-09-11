@@ -20,6 +20,12 @@ products = Product.create([
   {name: 'India', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
   price: 95.85, months: 'march-august', image_src: '/images/india.jpg', featured: false},
   {name: 'India', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
+  price: 95.85, months: 'march-august', image_src: '/images/india.jpg', featured: false},
+  {name: 'Tanzania', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
+  price: 44.55, months: 'april-december', image_src: '/images/tanzania.jpg', featured: true},
+  {name: 'Machupichu', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
+  price: 25.45, months: 'february-november', image_src: '/images/machupichu.jpg', featured: false},
+  {name: 'India', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
   price: 95.85, months: 'march-august', image_src: '/images/india.jpg', featured: false}
 	])
 
