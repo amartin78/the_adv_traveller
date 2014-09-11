@@ -6,8 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-
 products = Product.create([
 	{name: 'Alaska', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
 	price: 44.55, months: 'april-june', image_src: '/images/alaska.jpg', featured: true},
