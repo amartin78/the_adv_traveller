@@ -33,7 +33,6 @@ describe ProductsController do
       before do
         sign_in :user, @user
         @product1 = create(:product)
-        @product2 = create(:product)
       end
       it "should display correct data" do
         get :index

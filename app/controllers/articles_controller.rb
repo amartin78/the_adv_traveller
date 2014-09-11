@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   include ActiveModel::MassAssignmentSecurity
-
+  before_action :authenticate_user!
   load_and_authorize_resource
 
   attr_protected :title, :author, :date, :body
