@@ -12,7 +12,7 @@ products = Product.create([
 	{name: 'Atacama Desert', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
 	price: 66.75, months: 'september-december', image_src: '/images/atacama-desert.jpg', featured: true},
 	{name: 'India', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 95.85, months: 'march-august', image_src: '/images/india.jpg', featured: false},
+	price: 25.35, months: 'march-august', image_src: '/images/india.jpg', featured: false},
 	{name: 'Machupichu', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
 	price: 25.45, months: 'february-november', image_src: '/images/machupichu.jpg', featured: false},
 	{name: 'Tanzania', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
