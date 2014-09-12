@@ -14,14 +14,14 @@
                 <ul class="list-group">
                   <li class="list-group-item">
                     <% cache(article) do %>
-                      <%= link_to article.title, article %>
+                      <%= link_to article.title, article_url(article) %>
                     <% end %>
                   </li>
                 </ul>
               <% end %> 
             <% end %>       
             <ul class="pagination list-group">
-              <li class="a-left"><%= will_paginate(@posts) %></li>
+              <li class="a-left"><%= will_paginate @articles %></li>
             </ul>
             <p class="navigation a-right">
               <%= link_to 'New Article', new_article_path %>

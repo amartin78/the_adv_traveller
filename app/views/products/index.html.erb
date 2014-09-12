@@ -11,28 +11,45 @@
         <div class="row-testimonials">
           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <h2>
-                <% cache(product) do %>
+                <% cache(product.name) do %>
                   <%= link_to product.name, product %>
                 <% end %>
               </h2>
-              <p><%= product.description %></p>
+              <p>
+                <% cache(product.description) do %>
+                  <%= product.description %>
+                <% end %>
+              </p>
             <div>
               <ul class="product p-left">
                 <li>
-                  <% cache(product) do %>
+                  <% cache(product.months) do %>
                     Months: <%= product.months %>
                   <% end %>
                 </li>
-                <li>Price: <%= number_to_currency(product.price, precision: 2, unit: '£') %>
+                <li>
+                  Price: 
+                  <% cache(product.price) do %>
+                    <%= number_to_currency(product.price, precision: 2, unit: '£') %>
+                  <% end %>
+                </li>
               </ul>
               <ul class="product p-right">
-                  <li>
-                    <% cache(product) do %>
-                      <%= link_to 'Show', product %>
-                    <% end %>
-                  </li>
-                  <li><%= link_to 'Edit', edit_product_path(product) %>
-                  <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <li>
+                  <% cache(product) do %>
+                    <%= link_to 'Show', product %>
+                  <% end %>
+                </li>
+                <li>
+                  <% cache(product) do %>
+                    <%= link_to 'Edit', edit_product_path(product) %>
+                  <% end %>
+                </li>
+                <li>
+                  <% cache(product) do %>
+                    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+                </li>
               </ul>
             </div>
           </div>
@@ -42,25 +59,44 @@
       <div class="container product">
         <div class="row-testimonials">
           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <h2><%= link_to product.name, product %></h2>
-              <p><%= product.description %></p>
+              <h2>
+                <% cache(product.name) do %>
+                  <%= link_to product.name, product %>
+                <% end %>
+              </h2>
+              <p>
+                <% cache(product.description) do %>
+                  <%= product.description %>
+                <% end %>
+              </p>
             <div>
               <ul class="product p-right">
-                <li>Months: <%= product.months %>
-                <li>Price: 
-                  <% cache(product) do %>
+                <li>Months: 
+                  <% cache(product.months) do %>
+                    <%= product.months %>
+                  <% end %>
+                <li>
+                  Price: 
+                  <% cache(product.price) do %>
                     <%= number_to_currency(product.price, precision: 2, unit: '£') %>
                   <% end %>
                 </li>
               </ul>
               <ul class="product p-left">
-                  <li><%= link_to 'Show', product %>
-                  <li><%= link_to 'Edit', edit_product_path(product) %>
-                  <li>
-                    <% cache(product) do %>
-                      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    <% end %>
-                  </li>
+                <li>
+                  <% cache(product) do %>
+                    <%= link_to 'Show', product %>
+                  <% end %>
+                </li>
+                <li>
+                  <% cache(product) do %>
+                    <%= link_to 'Edit', edit_product_path(product) %>
+                  <% end %>
+                <li>
+                  <% cache(product) do %>
+                    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+                </li>
               </ul>
             </div>
           </div>
