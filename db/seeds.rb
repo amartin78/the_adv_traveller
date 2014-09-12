@@ -16,8 +16,10 @@ products = Product.create([
 	{name: 'Machupichu', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
 	price: 25.45, months: 'february-november', image_src: '/images/machupichu.jpg', featured: false},
 	{name: 'Tanzania', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 44.55, months: 'april-december', image_src: '/images/tanzania.jpg', featured: true}
-	])
+	price: 44.55, months: 'april-december', image_src: '/images/tanzania.jpg', featured: true},
+  {name: 'India', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+  price: 35.55, months: 'april-december', image_src: '/images/india.jpg', featured: true}
+])
 
 testimonials = Product.find(2).testimonials.create([
   {name: 'Testimonial 4', email: 'a1@h.com', body: 'Aenean ultricies mi vitae est.'},

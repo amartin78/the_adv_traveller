@@ -1,4 +1,5 @@
 <% @body_id='destinations' %>
+<% cache(cache_key_for_products) do %>
   <% @products.each do |product| %>
     <% if product.id.odd? %>
       <div class="container product">
@@ -9,7 +10,11 @@
         </div>
         <div class="row-testimonials">
           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <h2><%= link_to product.name, product %></h2>
+              <h2>
+                <% cache(product) %>
+                  <%= link_to product.name, product %>
+                <% end %>
+              </h2>
               <p><%= product.description %></p>
             <div>
               <ul class="product p-left">
@@ -52,6 +57,7 @@
       </div>
     <% end %>
   <% end %>
+<% end %>
 <div class="container product">
   <%= link_to 'New Product', new_product_path %>
 </div>
