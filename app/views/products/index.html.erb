@@ -18,11 +18,19 @@
               <p><%= product.description %></p>
             <div>
               <ul class="product p-left">
-                <li>Months: <%= product.months %>
+                <li>
+                  <% cache(product) do %>
+                    Months: <%= product.months %>
+                  <% end %>
+                </li>
                 <li>Price: <%= number_to_currency(product.price, precision: 2, unit: '£') %>
               </ul>
               <ul class="product p-right">
-                  <li><%= link_to 'Show', product %>
+                  <li>
+                    <% cache(product) do %>
+                      <%= link_to 'Show', product %>
+                    <% end %>
+                  </li>
                   <li><%= link_to 'Edit', edit_product_path(product) %>
                   <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
               </ul>
