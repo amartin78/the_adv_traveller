@@ -48,13 +48,13 @@
               <% unless comment.new_record? %>
                 <p>
                   <strong>Commenter:</strong>
-                  <% cache(comment) do %>
+                  <% cache(comment.commenter) do %>
                     <%= comment.commenter %>
                   <% end %>
                 </p>
                 <p>
                   <strong>Comment:</strong>
-                  <% cache(comment) do %>
+                  <% cache(comment.body) do %>
                     <%= comment.body %>
                   <% end %>
                 </p>

@@ -32,17 +32,19 @@
               <% unless testimonial.nil? %>
                 <p>
                   <strong>Name:</strong>
-                  <% cache(testimonial) do %>
+                  <% cache(testimonial.name) do %>
                     <%= testimonial.name %>
                   <% end %>
                 </p>
                 <p>
                 <strong>Testimonial:</strong>
-                <% cache(testimonial) do %>
+                <% cache(testimonial.body) do %>
                   <%= testimonial.body %>
                 <% end %>
                 </p>
-                <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
+                <% cache(testimonial) do %>
+                  <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
+                <% end %>
                 <hr>
               <% end %>
             <% end %>
