@@ -10,8 +10,13 @@
       <p><%= @product.description %></p>
       <div>
         <ul class="product p-left">
-          <li>Months: <%= @product.months%>
-          <li>Price: <%= number_to_currency(@product.price, precision: 2, unit: '£') %>
+          <li>Months: <%= @product.months%></li>
+          <li>Price: <%= number_to_currency(@product.price, precision: 2, unit: '£') %></li>
+          <li>
+            <%= form_tag "/payments/create" do %>
+              <%= render "shared/stripe_checkout_button" %>
+            <% end %>
+          </li>
         </ul>
         <ul class="product p-right">
           <%= link_to 'Edit', edit_product_path(@product) %> |
@@ -42,7 +47,7 @@
                   <%= testimonial.body %>
                 <% end %>
                 </p>
-                <% cache(testimonial) do %>
+                <% cache((testimonial.id).to_s + "destroy") do %>
                   <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
                 <% end %>
                 <hr>

@@ -42,24 +42,24 @@
         <div>
           <% unless @article.comments.first.new_record? %>
             <p><h2>Comments</h2></p>
-          <% end %>
-          <% cache(cache_key_for_comments) do %>
-            <% @article.comments.each do |comment| %>
-              <% unless comment.new_record? %>
-                <p>
-                  <strong>Commenter:</strong>
-                  <% cache(comment.commenter) do %>
-                    <%= comment.commenter %>
-                  <% end %>
-                </p>
-                <p>
-                  <strong>Comment:</strong>
-                  <% cache(comment.body) do %>
-                    <%= comment.body %>
-                  <% end %>
-                </p>
-                <% cache(comment) do %>
-                  <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% cache(cache_key_for_comments) do %>
+              <% @article.comments.each do |comment| %>
+                <% unless comment.new_record? %>
+                  <p>
+                    <strong>Commenter:</strong>
+                    <% cache(comment.commenter) do %>
+                      <%= comment.commenter %>
+                    <% end %>
+                  </p>
+                  <p>
+                    <strong>Comment:</strong>
+                    <% cache(comment.body) do %>
+                      <%= comment.body %>
+                    <% end %>
+                  </p>
+                    <% cache((comment.id).to_s + "destroy") do %>
+                      <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
                 <% end %>
               <% end %>
             <% end %>

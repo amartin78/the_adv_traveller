@@ -5,7 +5,9 @@
       <div class="container product">
         <div class="row-feautures">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <% cache(product.image_src) do %>
               <img src="<%= product.image_src %>" width="250px" height="200px">
+            <% end %>
           </div>
         </div>
         <div class="row-testimonials">
@@ -36,17 +38,17 @@
               </ul>
               <ul class="product p-right">
                 <li>
-                  <% cache(product) do %>
+                  <% cache((product.id).to_s + "show") do %>
                     <%= link_to 'Show', product %>
                   <% end %>
                 </li>
                 <li>
-                  <% cache(product) do %>
+                  <% cache((product.id).to_s + "edit") do %>
                     <%= link_to 'Edit', edit_product_path(product) %>
                   <% end %>
                 </li>
                 <li>
-                  <% cache(product) do %>
+                  <% cache((product.id).to_s + "destroy")do %>
                     <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
                   <% end %>
                 </li>
@@ -84,16 +86,16 @@
               </ul>
               <ul class="product p-left">
                 <li>
-                  <% cache(product) do %>
+                  <% cache((product.id).to_s + "show") do %>
                     <%= link_to 'Show', product %>
                   <% end %>
                 </li>
                 <li>
-                  <% cache(product) do %>
+                  <% cache((product.id).to_s + "edit") do %>
                     <%= link_to 'Edit', edit_product_path(product) %>
                   <% end %>
                 <li>
-                  <% cache(product) do %>
+                  <% cache((product.id).to_s + "destroy") do %>
                     <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
                   <% end %>
                 </li>
@@ -103,7 +105,9 @@
         </div>
         <div class="row-feautures">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <img src="<%= product.image_src %>" width="250px" height="200px">
+            <% cache(product.image_src) do %>
+              <img src="<%= product.image_src %>" width="250px" height="200px">
+            <% end %>
           </div>
         </div>
       </div>

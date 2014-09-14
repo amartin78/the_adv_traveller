@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Dotenv
+gem 'dotenv-rails', :groups => [:development, :test]
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 
@@ -26,25 +29,28 @@ group :development, :test do
   gem 'spork-rails'
 end
 
-#Dalli
+# Stripe
+gem 'stripe'
+
+# Dalli
 gem 'dalli'
 
-#Rollbar
+# Rollbar
 gem 'rollbar', '~>1.0.0'
 
-#Old gem protected_attributes
+# Old gem protected_attributes
 gem 'protected_attributes'
 
-#Devise
+# Devise
 gem 'devise'
 
-#Gem cancancan
+# Gem cancancan
 gem 'cancancan', '1.9'
 
-#Gem rails_admin
+# Gem rails_admin
 gem 'rails_admin'
 
-#Will-paginate
+# Will-paginate
 gem 'will_paginate', '~>3.0'
 gem 'bootstrap-will_paginate', '~>0.0.10'
 
