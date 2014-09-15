@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :payments
+
   root 'pages#landing_page'
 
   get 'about_company', to: 'pages#about_company'
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
   get 'form_output', to: 'form_example#form_output'
 
   get 'blog', to: 'articles#index'
+
+  # get 'payment', to: 'payments#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
