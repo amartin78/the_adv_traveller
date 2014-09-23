@@ -10,6 +10,7 @@ gem 'rails', '4.1.2'
 group :development do
 	gem 'sqlite3'
 	gem 'guard-spork'
+	gem 'brakeman', :require => false
 end
 
 group :test, :darwin do
@@ -28,6 +29,9 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'spork-rails'
 end
+
+# Byebug
+gem 'byebug'
 
 # Stripe
 gem 'stripe'
