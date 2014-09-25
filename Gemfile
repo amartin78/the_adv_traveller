@@ -5,12 +5,12 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
+gem 'brakeman', :require => false
 
 # Use sqlite3 as the database for Active Record
 group :development do
 	gem 'sqlite3'
 	gem 'guard-spork'
-	gem 'brakeman', :require => false
 end
 
 group :test, :darwin do
@@ -25,7 +25,6 @@ end
 group :development, :test do
   gem 'rspec-rails', '~>3.0.0'
   gem 'factory_girl_rails', '~>4.0'
-  # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'
   gem 'spork-rails'
 end
