@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.2'
+gem 'rails', '4.1.5'
 gem 'brakeman', :require => false
 
 # Use sqlite3 as the database for Active Record

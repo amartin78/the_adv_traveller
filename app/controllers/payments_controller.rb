@@ -1,4 +1,7 @@
 class PaymentsController < ApplicationController
+  include ActiveModel::MassAssignmentSecurity
+
+  attr_protected :customer_id
 
   def create
     if current_user.charge(params)
