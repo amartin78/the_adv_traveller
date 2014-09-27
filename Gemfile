@@ -29,6 +29,10 @@ group :development, :test do
   gem 'spork-rails'
 end
 
+# Chosen rails
+gem 'chosen-rails'
+
+
 # Byebug
 gem 'byebug'
 
