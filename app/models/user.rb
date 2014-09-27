@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
     cus=Stripe::Customer.create(card: options[:stripeToken], email: email)
     update_attributes customer_id: cus.id
-
+    
     Stripe::Charge.create(
     	:customer    => cus.id,
     	:amount      => 10000,
