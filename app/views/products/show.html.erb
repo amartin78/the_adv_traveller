@@ -13,7 +13,7 @@
           <li>Months: <%= @product.months%></li>
           <li>Price: <%= number_to_currency(@product.price, precision: 2, unit: '£') %></li>
           <li>
-            <%= form_tag "/payments" do %>
+            <%= form_tag("/payments", remote: true, id: "payments_tag") do %>
               <%= render "shared/stripe_checkout_button" %>
             <% end %>
           </li>
