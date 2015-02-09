@@ -1,42 +1,5 @@
 <% @body_id = 'home' %>
 <% @header_id = 'top' %>
-<div id="content">
-  <div data-ride="carousel"  class="carousel slide" id="myCarousel">
-    <ol class="carousel-indicators">
-    <li class="" data-slide-to="0" data-target="#myCarousel"></li>
-    <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
-    <li data-slide-to="2" data-target="#myCarousel" class=""></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="item active">
-    <img src="/images/mountainclimber.jpg" alt="">
-    <div class="container">
-      <h1>Example Headline</h1>
-      <p>A longer summary of what we do</p>
-      <p><a role="button" href="#" class="btn btn-lg btn-info">Sign up today</a></p>
-    </div><!-- .container -->
-    </div><!-- .item -->
-    <div class="item">
-    <img src="/images/sea_traveller.jpg" alt="">
-    <div class="container">
-      <h1>Second Headline</h1>
-      <p>Description of the second slide</p>
-        <p><a role="button" href="#" class="btn btn-lg btn-info">Read more here</a></p>
-    </div><!-- .container -->
-    </div><!-- .item -->
-    <div class="item">
-    <img src="/images/desert-1.jpg" alt="">
-    <div class="container">
-      <h1>Third Headline</h1>
-      <p>One more slide about the product</p>
-      <p><a role="button" href="#" class="btn btn-lg btn-info">Features</a></p>
-    </div><!-- .container -->
-    </div><!-- .item -->
-  </div><!-- .carousel inner -->
-  <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
-  <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
-  </div><!-- .carousel -->
-</div>
 <div class="container">
   <div class="row testimonials">
     <h1>SPECIAL OFFERS</h1>
@@ -67,7 +30,7 @@
       <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."          
       </p>
     </div><!-- col-xs-7 col-sm-7 col-md-7 col-lg-7 -->
-  </div>
+  </div> <!-- .row-feature -->
   <hr>
   <div class="row testimonials">
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -127,4 +90,3 @@
   <%= render '/articles/newest_articles' %>
   <%= render '/testimonials/newest_testimonials' %>
   </div><!-- .container -->
-</div><!-- #content -->

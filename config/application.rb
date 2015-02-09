@@ -22,7 +22,7 @@ module TheAdvTraveller
 
 
     # config.active_record.whitelist_attributes = true
-    config.force_ssl =true
+    # config.force_ssl =true
 
   end
 end
