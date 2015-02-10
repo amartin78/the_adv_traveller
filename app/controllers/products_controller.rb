@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   include ActiveModel::MassAssignmentSecurity
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   load_and_authorize_resource
   attr_protected :name, :description, :image_src, :price, :months, :featured
 
