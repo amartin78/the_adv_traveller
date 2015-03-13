@@ -15,9 +15,7 @@ Rails.application.routes.draw do
 
   root 'pages#landing_page'
 
-  get 'about_company', to: 'pages#about_company'
-
-  get 'about_team', to: 'pages#about_team'
+  get 'about', to: 'pages#about'
 
   get 'destinations', to: 'products#index'
 
