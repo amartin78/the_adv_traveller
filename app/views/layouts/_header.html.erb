@@ -8,184 +8,185 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>  
   
-
   <nav class="fixed">   
-  <div class="nav-header">  
-    <div class="hidden-xs">
-      <p class="nav-logo">The Adventure Traveller</p>
-      <div class="nav-login">
-        <ul class="navbar">
-          <% if user_signed_in? %>
-            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>         
-          <% else %>
-            <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
-            <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
-          <% end %>
-        </ul>
-      </div>
-      <ul class="navbar">
-        <li><%= link_to 'Home', root_path, 'id'=>'nav-home' %>
-        <li><%= link_to 'About', about_path, 'id' => 'nav-about' %>
-        <li><%= link_to 'Destinations', destinations_path, 'id'=>'nav-destinations' %>
-        <li data-no-turbolink><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
-        <li><%= link_to 'Blog', blog_path, 'id'=>'nav-blog' %>
-      </ul>
-      <!-- login -->
-      <% if user_signed_in? %>
-        <ul class="login">
-          <li>You are logged in as:</li>
-          <li class="dropdown">
-            <%= link_to raw(current_user.email + '<span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-profile' %>
-            <ul class="dropdown-menu profile">
-              <% if current_user.is_admin == true %>
-                <li><%= link_to 'Admin Dashboard', rails_admin_path %>
-              <% elsif %>
-                <li><%= link_to 'Profile', user_path(current_user.id) %>
-              <% end %>
-            </ul>
-          </li>
-        </ul>
-      <% end %>
- 
-      <% flash.each do |key, value| %>
-        <% if key == 'alert' %>
-          <div class="alert alert-danger message"><%=value%></div>
-        <% elsif key == 'notice' %>
-          <div class="alert alert-success message"><%=value%></div>
-        <% end %>
-      <% end %>
-    </div><!-- .hidden-xs -->   
-  </div> <!-- .nav-header -->
-  </nav> <!-- .fixed -->
-
-  <nav class="nav-header-mobile">
-    <div class="visible-xs">
-      <p class="nav-logo-mobile">The Adventure Traveller</p>
-      <button class="navbar-toggle collapsed nav-button" data-target=".navbar-collapse" data-toggle="collapse" type="button">&#9776;</button> 
-      <center>
-        <div class="collapse navbar-collapse" >
-          <ul class="navbar-mobile" >
-            <li><%= link_to 'Home', root_path, 'id'=>'nav-home' %>
-            <li><%= link_to 'About', about_path, 'id' => 'nav-about' %>
-            <li><%= link_to 'Destinations', destinations_path, 'id'=>'nav-destinations' %>
-            <li data-no-turbolink><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
-            <li><%= link_to 'Blog', blog_path, 'id'=>'nav-blog' %>
+    <div class="nav-header">  
+      <div class="hidden-xs">
+        <p class="nav-logo">The Adventure Traveller</p>
+        <div class="nav-login">
+          <ul class="navbar">
             <% if user_signed_in? %>
-              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li> 
+              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>         
             <% else %>
-              <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %>|
+              <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
               <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
             <% end %>
           </ul>
-          <!-- login -->
-          <% if user_signed_in? %>
-            <ul class="login">
-              <li>You are logged in as:</li>
-              <li class="dropdown">
-                <%= link_to raw(current_user.email + '<span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-profile' %>
-                <ul class="dropdown-menu profile">
-                  <% if current_user.is_admin == true %>
-                    <li><%= link_to 'Admin Dashboard', rails_admin_path %>
-                  <% elsif %>
-                    <li><%= link_to 'Profile', user_path(current_user.id) %>
-                  <% end %>
-                </ul>
-              </li>
-            </ul>
-          <% end %>
-        </div> <!-- .collapse navbar-collapse -->
-      </center>
-      <% flash.each do |key, value| %>
-        <% if key == 'alert' %>
-          <div class="alert alert-danger message"><%=value%></div>
-        <% elsif key == 'notice' %>
-          <div class="alert alert-success message"><%=value%></div>
+        </div>
+        <ul class="navbar">
+          <li><%= link_to 'Home', root_path, 'id'=>'nav-home' %>
+          <li><%= link_to 'About', about_path, 'id' => 'nav-about' %>
+          <li><%= link_to 'Destinations', destinations_path, 'id'=>'nav-destinations' %>
+          <li data-no-turbolink><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
+          <li><%= link_to 'Blog', blog_path, 'id'=>'nav-blog' %>
+        </ul>
+        <!-- login -->
+        <% if user_signed_in? %>
+          <ul class="login">
+            <li>You are logged in as:</li>
+            <li class="dropdown">
+              <%= link_to raw(current_user.email + '<span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-profile' %>
+              <ul class="dropdown-menu profile">
+                <% if current_user.is_admin == true %>
+                  <li><%= link_to 'Admin Dashboard', rails_admin_path %>
+                <% elsif %>
+                  <li><%= link_to 'Profile', user_path(current_user.id) %>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
         <% end %>
-      <% end %>
-    </div> <!-- .visible-xs -->  
-  </nav>
+   
+        <% flash.each do |key, value| %>
+          <% if key == 'alert' %>
+            <div class="alert alert-danger message"><%=value%></div>
+          <% elsif key == 'notice' %>
+            <div class="alert alert-success message"><%=value%></div>
+          <% end %>
+        <% end %>
+      </div><!-- .hidden-xs -->   
+    </div> <!-- .nav-header -->
+  </nav> <!-- .fixed -->
 
+  <nav class="fixed">
+    <div class="nav-header-mobile">
+      <div class="visible-xs">
+        <p class="nav-logo-mobile">The Adventure Traveller</p>
+        <button class="navbar-toggle collapsed nav-button" data-target=".navbar-collapse" data-toggle="collapse" type="button">&#9776;</button> 
+        <center>
+          <div class="collapse navbar-collapse" >
+            <ul class="navbar-mobile" >
+              <li><%= link_to 'Home', root_path, 'id'=>'nav-home' %>
+              <li><%= link_to 'About', about_path, 'id' => 'nav-about' %>
+              <li><%= link_to 'Destinations', destinations_path, 'id'=>'nav-destinations' %>
+              <li data-no-turbolink><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
+              <li><%= link_to 'Blog', blog_path, 'id'=>'nav-blog' %>
+              <% if user_signed_in? %>
+                <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li> 
+              <% else %>
+                <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %>|
+                <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
+              <% end %>
+            </ul>
+            <!-- login -->
+            <% if user_signed_in? %>
+              <ul class="login">
+                <li>You are logged in as:</li>
+                <li class="dropdown">
+                  <%= link_to raw(current_user.email + '<span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-profile' %>
+                  <ul class="dropdown-menu profile">
+                    <% if current_user.is_admin == true %>
+                      <li><%= link_to 'Admin Dashboard', rails_admin_path %>
+                    <% elsif %>
+                      <li><%= link_to 'Profile', user_path(current_user.id) %>
+                    <% end %>
+                  </ul>
+                </li>
+              </ul>
+            <% end %>
+          </div> <!-- .collapse navbar-collapse -->
+        </center>
+        <% flash.each do |key, value| %>
+          <% if key == 'alert' %>
+            <div class="alert alert-danger message"><%=value%></div>
+          <% elsif key == 'notice' %>
+            <div class="alert alert-success message"><%=value%></div>
+          <% end %>
+        <% end %>
+      </div> <!-- .visible-xs -->  
+    </div><!-- .nav-header-mobile -->
+  </nav><!-- .fixed -->
 
   <div class="hidden-xs">
-    <div id="content">
-      <div data-ride="carousel"  class="carousel slide" id="myCarousel">
-        <ol class="carousel-indicators">
-          <li class="" data-slide-to="0" data-target="#myCarousel"></li>
-          <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
-          <li data-slide-to="2" data-target="#myCarousel" class=""></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="/images/_hero-images/hero_Iceland.jpg" alt="">
-            <div class="container">
-              <h1>Example Headline</h1>
-              <p>A longer summary of what we do</p>
-              <p><%= link_to 'Sign up today', new_user_registration_path, 'role'=>'button', 'class'=>'btn btn-lg btn-info'%></p>
-            </div><!-- .container -->
-          </div><!-- .item -->
-          <div class="item">
-            <img src="/images/_hero-images/hi-machu-pichu.jpg" alt="">
-            <div class="container">
-              <h1>Second Headline</h1>
-              <p>Description of the second slide</p>
-              <p><a role="button" href="#" class="btn btn-lg btn-info">Read more here</a></p>
-            </div><!-- .container -->
-          </div><!-- .item -->
-          <div class="item">
-            <img src="/images/_hero-images/hero_desert.jpg" alt="">
-            <div class="container">
-              <h1>Third Headline</h1>
-              <p>One more slide about the product</p>
-              <p><a role="button" href="#" class="btn btn-lg btn-info">Features</a></p>
-            </div><!-- .container -->
-          </div><!-- .item -->
-        </div><!-- .carousel inner -->
-      <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- .carousel -->
-    </div>
-  </div>
+    <div class="space">
+      <div id="content">
+        <div data-ride="carousel"  class="carousel slide" id="myCarousel">
+          <ol class="carousel-indicators">
+            <li class="" data-slide-to="0" data-target="#myCarousel"></li>
+            <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
+            <li data-slide-to="2" data-target="#myCarousel" class=""></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="/images/_hero-images/hero_Iceland.jpg" alt="">
+              <div class="container">
+                <h1>Example Headline</h1>
+                <p>A longer summary of what we do</p>
+                <p><%= link_to 'Sign up today', new_user_registration_path, 'role'=>'button', 'class'=>'btn btn-lg btn-info'%></p>
+              </div><!-- .container -->
+            </div><!-- .item -->
+            <div class="item">
+              <img src="/images/_hero-images/hi-machu-pichu.jpg" alt="">
+              <div class="container">
+                <h1>Second Headline</h1>
+                <p>Description of the second slide</p>
+                <p><a role="button" href="#" class="btn btn-lg btn-info">Read more here</a></p>
+              </div><!-- .container -->
+            </div><!-- .item -->
+            <div class="item">
+              <img src="/images/_hero-images/hero_desert.jpg" alt="">
+              <div class="container">
+                <h1>Third Headline</h1>
+                <p>One more slide about the product</p>
+                <p><a role="button" href="#" class="btn btn-lg btn-info">Features</a></p>
+              </div><!-- .container -->
+            </div><!-- .item -->
+          </div><!-- .carousel inner -->
+          <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
+          <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div><!-- .carousel -->
+      </div><!-- .content -->
+    </div><!-- .space -->
+  </div><!-- .hidden-xs -->
 
   <div class="visible-xs">
-    <div id="content">
-      <div data-ride="carousel"  class="carousel slide" id="myCarousel">
-        <ol class="carousel-indicators">
-          <li class="" data-slide-to="0" data-target="#myCarousel"></li>
-          <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
-          <li data-slide-to="2" data-target="#myCarousel" class=""></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="/images/_hero-images/mobile/hero_Iceland.jpg" alt="">
-            <div class="container">
-              <h1>Example Headline</h1>
-              <p>A longer summary of what we do</p>
-              <p><%= link_to 'Sign up today', new_user_registration_path, 'role'=>'button', 'class'=>'btn btn-lg btn-info'%></p>
-            </div><!-- .container -->
-          </div><!-- .item -->
-          <div class="item">
-            <img src="/images/_hero-images/mobile/hi-machu-pichu.jpg" alt="">
-            <div class="container">
-              <h1>Second Headline</h1>
-              <p>Description of the second slide</p>
-              <p><a role="button" href="#" class="btn btn-lg btn-info">Read more here</a></p>
-            </div><!-- .container -->
-          </div><!-- .item -->
-          <div class="item">
-            <img src="/images/_hero-images/mobile/hero_desert.jpg" alt="">
-            <div class="container">
-              <h1>Third Headline</h1>
-              <p>One more slide about the product</p>
-              <p><a role="button" href="#" class="btn btn-lg btn-info">Features</a></p>
-            </div><!-- .container -->
-          </div><!-- .item -->
-        </div><!-- .carousel inner -->
-        <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
-        <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
-      </div><!-- .carousel -->
-    </div>
-  </div>
-
-  
-  
+    <div class="space-mobile">
+      <div id="content">
+        <div data-ride="carousel"  class="carousel slide" id="myCarousel">
+          <ol class="carousel-indicators">
+            <li class="" data-slide-to="0" data-target="#myCarousel"></li>
+            <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
+            <li data-slide-to="2" data-target="#myCarousel" class=""></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="/images/_hero-images/mobile/hero_Iceland.jpg" alt="">
+              <div class="container">
+                <h1>Example Headline</h1>
+                <p>A longer summary of what we do</p>
+                <p><%= link_to 'Sign up today', new_user_registration_path, 'role'=>'button', 'class'=>'btn btn-lg btn-info'%></p>
+              </div><!-- .container -->
+            </div><!-- .item -->
+            <div class="item">
+              <img src="/images/_hero-images/mobile/hi-machu-pichu.jpg" alt="">
+              <div class="container">
+                <h1>Second Headline</h1>
+                <p>Description of the second slide</p>
+                <p><a role="button" href="#" class="btn btn-lg btn-info">Read more here</a></p>
+              </div><!-- .container -->
+            </div><!-- .item -->
+            <div class="item">
+              <img src="/images/_hero-images/mobile/hero_desert.jpg" alt="">
+              <div class="container">
+                <h1>Third Headline</h1>
+                <p>One more slide about the product</p>
+                <p><a role="button" href="#" class="btn btn-lg btn-info">Features</a></p>
+              </div><!-- .container -->
+            </div><!-- .item -->
+          </div><!-- .carousel inner -->
+          <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
+          <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div><!-- .carousel -->
+      </div><!-- .content -->
+    </div><!-- .space -->
+  </div><!-- .visible-xs -->
 </header>
