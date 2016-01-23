@@ -1,6 +1,15 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#article h2 {
+	margin: 0;
+	color: #fff;
+}
+
+#article li {
+	padding: 0;
+	list-style: none;
+}
 
 .a-left {
   float: left;
@@ -57,28 +66,83 @@
   list-style-type: none;
 }
 
+.article li a {
+	padding: 0;
+	text-transform: none;
+	font-weight: normal;
+}
+
+.list-group {
+	text-align: left;
+	margin: 0;
+}
+
+.list-group-item a {
+	text-transform: none; 
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+
+.panel-body ul {
+	padding: 10px 0 10px 0;
+}
+
 .panel-body ul > li {
   text-align: left;
+}
+
+.panel-body hr {
+	margin: 0;
+}
+
+.panel-body p {
+	font-size: 1.2rem;
+	padding-bottom: 5px;
+	margin-bottom: 0;
+}
+
+.panel-body p:last-of-type {
+	padding-bottom: 0;
+}
+
+.panel-body hr:last-child {
+	visibility: hidden;
+}
+
+.panel-body ul:last-of-type {
+	padding-bottom: 3px;
 }
 
 .panel-footer ul > li {
   padding: 0;
   text-align: left;
 }
+
+.panel-info {
+	border-color: #428bca;
+}
+
+.panel-info > .panel-heading {
+	background-color: #428bca;
+	border-bottom: #428bca;
+	color: #fff;
+}
+
+.panel-info > .panel-body a {
+	text-transform: none;
+	font-size:1.2rem;
+	font-weight: normal;
+}
+
+.panel-info > .panel-body a:link, .panel-info > .panel-body a:visited, .panel-info > .panel-body a:active, 
+.panel-info > .panel-body a:active{
+	color: #444;
+}
+
+.panel-title {
+	margin-top: 5px;
+}
+
 .pagination {
   display: inline;
-
 }
-
-.pagination ul > li {
- /* padding: 0 0 0 0;
-  margin: 0;
-  text-align: left;*/
-}
-
-.pagination a {
-
-/*  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;*/
-}
-

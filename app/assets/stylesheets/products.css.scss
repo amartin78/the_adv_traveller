@@ -1,6 +1,153 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#dates-prices {
+	clear: both;
+}
+
+#gallery {
+	clear: both;
+}
+
+#myCarousel-product {
+  box-shadow: 0 7px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+#myCarousel-product .item {
+  max-height: 300px;
+}
+
+#myCarousel-product .container {
+  left: 0;
+  position: absolute;
+  top: 270px;
+}
+
+#myCarousel-product h1, #myCarousel-product p {
+  color: #fff;
+  padding: 3px 0;
+  margin: 0 auto;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+  width: 70%;
+  text-align: left;
+}
+
+#myCarousel-product img {
+  width: 100%;
+}
+
+#myCarousel-product li {
+	padding: 0px 3px;
+}
+
+#overview {
+	clear: both;
+}
+
+#product h1, #product h2, #product h3 {
+	padding: 0;
+	margin: 15px 0 15px 0;
+	color: #141D29;
+}
+
+#product h4, #product h5, #product h6 {
+	margin: 0;
+	text-align: left;
+}
+
+#product hr {
+	margin: 5px 0 15px 0;
+	color: #428bca;
+	font: #428bca;
+}
+
+#product p {
+	margin: 0 0 10px 0;
+}
+
+#reviews {
+	clear: both;
+}
+
+.featured {
+	border: 1.5px solid #ccc;
+	padding: 10px 10px 0 10px;
+}
+
+.featured a {
+	text-transform: none;
+	font-weight: normal;
+	font-size: none;
+}
+
+.featured a:link, .featured a:visited, .featured a:hover, .featured a:active { 
+  color: #428bca;
+  text-decoration: none;
+}
+
+.featured img {
+	display: inline;
+	margin-top: 0px !important;
+	margin-bottom: 15px;
+}
+
+.featured h6 {
+	color: #fff;
+	background-color: #428bca;
+	margin: 0;
+	position: absolute;
+	z-index: 15;
+	padding: 10px;
+	width: 220px;
+	text-transform: uppercase;
+}
+
+.featured h5 {
+	color: #428bca;
+	margin: 0 0 10px 0 !important;
+	padding-left: 5px;
+	text-align: left;
+}
+
+.featured p {
+	float: left;
+	font-size: 1.1rem;
+	margin: 0;
+}
+
+.featured [class*="col"]:first-of-type {
+	padding: 0 0 0 5px;
+	margin: 0;
+}
+
+.featured [class*="col"]:nth-of-type(2) {
+	padding: 0 0 0 5px;
+	margin: 0;
+}
+
+.featured [class*="col"]:nth-of-type(2) p {
+	background-color: #428bca;
+	color: #fff;
+	padding: 5px 10px 5px 33px;
+	font-size: 1.1rem;
+	float: right;
+}
+
+.featured [class*="col"]:nth-of-type(2) p:nth-of-type(2) {
+	font-size: 2.5rem;
+	padding: 0 5px 40px 15px;
+}
+
+.info {
+	border: 1px solid #bce8f1;
+	padding: 0 15px;
+}
+
+.menu-product{
+	margin: 30px 0 0 0;
+	float: left;
+}
+
 .p-left {
 	float: left;
 	padding-left: 0;
@@ -10,13 +157,12 @@
   float: right;
 }
 
-.product img {
-	max-width: 100%;
+.product {
+	border: 0px solid #141D29;
 }
 
-.product h2 {
-	padding: 0;
-	margin: 0 0 10px 0;
+.product img {
+	max-width: 100%;
 }
 
 .product h2 a {
@@ -25,11 +171,71 @@
 
 .product li {
   display: inline;
-  padding: 5px 8px;
+  padding: 5px 15px;
+}
+
+.product li a {
+	font-size: 1.3rem;
 }
 
 .product p:first-of-type {
   margin-bottom: 104px;
+}
+
+.product ul {
+	padding-left: 0;
+}
+
+.tips {
+	border: 1px solid #bce8f1;
+	padding-left: 15px;
+}
+
+#mission .panel-body {
+	padding-bottom: 12px;
+}
+
+#enews {
+	color: #fff;
+}
+
+#enews a:link, #enews a:visited, #enews a:active, #enews a:active {
+	color: #444;
+}
+
+#brochure {
+	color: #fff;
+}
+
+#brochure .panel-body {
+	font-size: 1.2rem;
+}
+
+#reviews img {
+	float: left;
+	margin-right: 15px;
+}
+
+#reviews p {
+	font-size: 1.2rem;
+	text-transform: none;
+	text-align: left;
+}
+
+#reviews p:last-of-type {
+	color: #428bca;
+}
+
+#reviews hr {
+	margin: 25px 0 10px 0;
+	width: 40px;
+	border-top: 1px solid #428bca;
+	background-color: #fff;
+}
+
+.reviews {
+	border: 1px solid #bce8f1;
+	padding: 0 15px;
 }
 
 

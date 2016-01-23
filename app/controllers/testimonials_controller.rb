@@ -1,7 +1,7 @@
 class TestimonialsController < ApplicationController
   include ActiveModel::MassAssignmentSecurity
 
-  attr_protected :name, :email, :body
+  attr_protected :name, :email, :body, :rate
   load_and_authorize_resource
 
   def new

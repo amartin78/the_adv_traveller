@@ -1,75 +1,95 @@
-<div class="container product">
-  <div class="row-feautures">
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <img src="<%= @product.image_src %>" width="250px" height="200px">
-    </div>
-  </div>
-  <div class="row-testimonials">
-    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-      <h2><%= link_to @product.name %></h2>
-      <p><%= @product.description %></p>
-      <div>
-        <ul class="product p-left">
-          <li>Months: <%= @product.months%></li>
-          <li>Price: <%= number_to_currency(@product.price, precision: 2, unit: '£') %></li>
-          <li>
-            <%= form_tag("/payments", remote: true, id: "payments_tag") do %>
-              <%= render "shared/stripe_checkout_button" %>
-            <% end %>
-          </li>
-        </ul>
-        <!-- <ul class="product p-right">
-          <%= link_to 'Edit', edit_product_path(@product) %> |
-          <%= link_to 'Back', products_path %>
-        </ul> -->
-        
+<div class="container product" id="product">
+  
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <div class="tips">
+        <h3>Travel Tips</h3>
+        <h4>Time Zone</h4>
+        <p>UTC/GMT + 3:00hours</p>
+        <h4>Languages</h4>
+        <p>Swahili, English</p>
+        <h4>Foreign Exchange Rate</h4>
+        <p>1.00 GBP = 2,505.29 TZS</p>
+        <h4>Weather</h4>
+        <p>31°/17°</p>
+      </div>
+      <%= render '/pages/enews' %>
+      <%= render '/pages/brochure' %>
+    </div><!-- col-xs-1 col-sm-3 col-md-3 col-lg-3 -->
+ 
+  
+    <div class="col-xs-3 col-sm-6 col-md-6 col-lg-6">
+      <div class="info">
+        <div>
+          <h3>Serengeti</h3>
+        </div>
+        <div>
+            <ul id="pikame">
+              <li><a href="/images/thumb-austria.jpg"><img src="/images/_destinations/africa/serengeti/seren11.jpg"></a></li>
+              <li><a href="/images/thumb-india.jpg"><img src="/images/_destinations/africa/serengeti/seren13.jpg"></a></li>
+              <li><a href="/images/thumb-new-zealand.jpg"><img src="/images/_destinations/africa/serengeti/seren14.jpg"></a></li>
+              <li><a href="/images/thumb-seren.jpg"><img src="/images/_destinations/africa/serengeti/seren8.jpg"></a></li>
+            </ul>
+          <div class="menu-product">
+            <ul>
+              <li><a href="#overview" onclick="overview()">Overview</a>
+              <li><a href="#dates-prices" onclick="dates_prices()">Dates and prices</a>
+              <li><a href="#gallery" onclick="gallery()">Gallery</a>
+              <li><a href="#reviews" onclick="reviews()">Reviews</a>
+            </ul>
+          </div>
+          <div id="overview">
+            <p>The park covers 14,750 square kilometres (5,700 sq mi)[7] of grassland plains, savanna, riverine forest, and woodlands. The park lies in northwestern Tanzania, bordered to the north by the Kenyan border, where it is continuous with the Maasai Mara National Reserve. To the southeast of the park is the Ngorongoro Conservation Area, to the southwest lies Maswa Game Reserve, to the west are the Ikorongo and Grumeti Game Reserves, and to the northeast and east lies the Loliondo Game Control Area. Together, these areas form the larger Serengeti ecosystem.</p>
+          </div>
+          <div id="dates-prices">
+            The Dates and prices
+          </div>
+          <div id="gallery">
+            The Gallery
+          </div>
+          <div id="reviews">
+            The Reviews
+          </div>
+        </div>
+      </div><!-- .info -->
+    </div><!-- .col-xs-3 col-md-9 -->
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <div class="reviews">
+        <h3>User Reviews</h3>
+        <hr>
+        <div class="rating"><span "sp2">&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></div>
+        <p>By: Alec Leamas</p>
+        <p>It was a great experience...</p>
+        <p>Date: 22 August 2014</p>
+        <hr>
+        <div class="rating"><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></div>
+        <p>By: Alec Leamas</p>
+        <p>It was a great experience...</p>
+        <p>Date: 22 August 2014</p>
+        <hr>
+        <div class="rating"><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></div>
+        <p>By: Alec Leamas</p>
+        <p>It was a great experience...</p>
+        <p>Date: 22 August 2014</p>
+        <hr>
+        <!-- <%= link_to "Add testimonial", new_product_testimonial_path(@product) %> -->
+        <p><%= link_to 'Add Testimonial', "#", data: {target: "#myModal", toggle: "modal", keyboard: "true"} %></p>
+        <%= render '/articles/newest_articles' %>
       </div>
     </div>
-    <div class="row-testimonials">
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-
-        <p><%= link_to 'Add Testimonial', "#", data: {target: "#myModal", toggle: "modal", keyboard: "true"} %></p>
-        <% unless @product.testimonials.first.nil? %>
-          <h2>Testimonials</h2>
-          <hr>
-          <% cache(cache_key_for_testimonials) do %>
-            <% @product.testimonials.order(updated_at: :desc).each do |testimonial| %>
-              <% unless testimonial.nil? %>
-                <p>
-                  <strong>Name:</strong>
-                  <% cache(testimonial.name) do %>
-                    <%= testimonial.name %>
-                  <% end %>
-                </p>
-                <p>
-                <strong>Testimonial:</strong>
-                <% cache(testimonial.body) do %>
-                  <%= testimonial.body %>
-                <% end %>
-                </p>
-                <% cache((testimonial.id).to_s + "destroy") do %>
-                  <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
-                <% end %>
-                <hr>
-              <% end %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div> <!-- col-xs-9 col-sm-9 col-md-9 col-lg-9 -->
-    </div>
-  </div>
-</div>
+  </div><!-- .reviews -->
+</div><!-- .container-product -->
 
 <div class="article modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title">New Article</h3>
+        <!-- <h3 class="modal-title">New Article</h3> -->
+        <h3 class="modal-title">New Testimonial</h3>
       </div>
       <div class="modal-body">
         <%= form_for([@product, @product.testimonials.build]) do |t| %>
-          <p><h3>New Testimonial</h3></p>
+          
           <p>
           <%= t.label :name %><br>
           <%= t.text_field :name %>
@@ -82,6 +102,14 @@
           <%= t.label :body %><br>
           <%= t.text_area :body %>
         </p>
+        <!-- </p>
+          <div class="rating"><span id="sp2">&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></div>
+        <p> -->
+          <input name="star1" type="radio" class="star"/>
+          <input name="star1" type="radio" class="star"/> 
+          <input name="star1" type="radio" class="star"/> 
+          <input name="star1" type="radio" class="star"/> 
+          <input name="star1" type="radio" class="star"/> 
         <p>
           <%= t.submit %>
         </p>
@@ -91,3 +119,23 @@
   </div>
 </div><!-- .modal .fade -->
 
+
+<script>
+  overview();
+  $(document).ready(function(){
+    $('#sp2').click(function(){
+      $('#sp2').rate();
+    });
+  });
+
+ //  $(document).ready(function() {
+ //   $('#test').click(function(){
+ //     $('#test').hide();
+ //   });
+ // });
+
+
+  function rate(){
+    alert("lakjdhkaj");
+  }
+</script>

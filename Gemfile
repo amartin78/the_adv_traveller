@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#PostgreSQL
+gem 'pg'
 
 # Dotenv
 gem 'dotenv-rails', :groups => [:development, :test]
@@ -9,7 +11,6 @@ gem 'brakeman', :require => false
 
 # Use sqlite3 as the database for Active Record
 group :development do
-	gem 'sqlite3'
 	gem 'guard-spork'
 end
 
@@ -18,7 +19,6 @@ group :test, :darwin do
 end
 
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
 

@@ -2,91 +2,55 @@
 <% @header_id = 'top' %>
 <div class="container">
   <div class="row testimonials">
-    <h1>SPECIAL OFFERS</h1>
     <%= render 'featured_product' %>
   </div><!-- .row .testimonials -->
-  <hr>
+  <div class="row testimonials" id="reviews">
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <img src="/images/reviews/prof1.jpg" class="img-responsive circular">
+      <p>Hotels were four or five star and the cuisine provided was a combination of Chinese and Western.</p>
+      <hr>
+      <p>Laura Smith</p>
+    </div>
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <img src="/images/reviews/prof2.jpg" class="img-responsive circular">
+      <p>In particular we were bowled over by the enthusiasm and passion of our guide. Great experience.</p>
+      <hr>
+      <p>Greg Brown</p>
+    </div>
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <img src="/images/reviews/prof3.jpg" class="img-responsive circular">
+      <p>While planning the trip, they were very responsive to my questions and requests all the time.</p>
+      <hr>
+      <p>Vanessa Ross</p>
+    </div>
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <img src="/images/reviews/prof4.jpg" class="img-responsive circular">
+      <p>We will not hesitate to come back in the future and will also recommended it to our friends.</p>
+      <hr>
+      <p>David Lewis</p>
+    </div>
+  </div>
   <div class="row feature">
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-      <div class="grid-of-images">
-        <div class="lightbox">
-          <a href="/images/new-zealand.jpg" title="Caption 1"><img src="/images/thumb-new-zealand.jpg"></a>
-          <a href="/images/colosseum.jpg" title="Caption 2"><img src="/images/thumb-colosseum.jpg"></a>
-          <a href="/images/pyrenees.jpg" title="Caption 3"><img src="/images/thumb-pyrenees.jpg"></a>
-          <a href="/images/tanzania-kilimanjaro.jpg" title="Caption 4"><img src="/images/thumb-tanzania-kilimanjaro.jpg"></a>
-          <a href="/images/fishing.jpg" title="Caption 5"><img src="/images/thumb-fishing.jpg"></a>
-          <a href="/images/taj-mahal.jpg" title="Caption 6"><img src="/images/thumb-taj-mahal.jpg"></a>
-          <a href="/images/machu-picchu-sunrise.jpg" title="Caption 7"><img src="/images/thumb-machu-picchu-sunrise.jpg"></a>
-          <a href="/images/austria.jpg" title="Caption 8"><img src="/images/thumb-austria.jpg"></a>
-          <a href="/images/tanzania-zebras.jpg" title="Caption 9"><img src="/images/thumb-tanzania-zebras.jpg"></a>
-          <a href="/images/alaska-sea-kayak.jpg" title="Caption 10"><img src="/images/thumb-alaska-sea-kayak.jpg"></a>
-          <a href="/images/town.jpg" title="Caption 11"><img src="/images/thumb-town.jpg"></a>
-          <a href="/images/venezia.jpg" title="Caption 12"><img src="/images/thumb-venezia.jpg"></a>
+    <div class="col-xs-1 col-sm-6 col-md-6 col-lg-6">
+      <div class="panel panel-info" id="mission">
+        <div class="panel-heading">
+          <h3 class="panel-title">Why Travel With Us...</h3>
+        </div>
+        <div class="panel-body">
+          <p>Whether we are selecting partners or designing our exclusive tours, we have a commitment to only choosing the best. Our teams know the difference between good and great, and this leads how we find our partners, our experiences and our destinations.</p>
+          <p>Every one of the tours we design is unique – because each of our clients is unique! When you customise a tour with us, you can rest assured that our team is working hard to make your perfect itinerary a reality using our dynamic portfolio of options.          
+          </p>
+          <p>All of our tour guides are locals to the country or city they help you explore. Equipped with international-standard first aid training and years of experience, our guides will help you get closer to the heart and soul of Asia while providing you safety and security.</p>
+          <p>There is nothing secretive or hidden about our prices. When you compare our prices we are always the best value for money.</p>
         </div>
       </div>
-    </div><!-- col-xs-5 col-sm-5 col-md-5 col-lg-5 -->
-    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-      <h3>Gallery</h3>            
-      <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."          
-      </p>
-    </div><!-- col-xs-7 col-sm-7 col-md-7 col-lg-7 -->
+    </div><!-- col-xs-1 col-sm-6 col-md-6 col-lg-6 -->
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <%= render '/articles/newest_articles' %>
+    </div><!-- col-xs-1 col-sm-4 col-md-4 col-lg-4 -->
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <%= render '/pages/enews' %>
+      <%= render '/pages/brochure' %>
+    </div><!-- col-xs-1 col-sm-2 col-md-2 col-lg-2 -->
   </div> <!-- .row-feature -->
-  <hr>
-  <div class="row testimonials">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <h2>Wellcome</h2>
-      <img src="/images/teleoperator.jpg" class="img-responsive" alt="teleoperator">
-      <p>LOREM LEAN STARTUP IPSUM.</p>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
-      <button class="btn btn-info">More Info</button>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <h2>Client Quotes</h2>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <img src="/images/customer1.jpg" class="img-responsive" alt="customer">
-      </div>
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h5>NICK AMET</h5>
-        <h6><span class="text-muted">TEMPO CORP</span></h6>
-        <P>Aenean fermentum, elit eget tinci condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <!-- Donec non enim in turpis pulvinar facilisis. --></p>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <img src="/images/customer2.jpg" class="img-responsive" alt="customer">
-      </div>
-      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <h5>LOREM CAROL</h5>
-        <h6><span class="text-muted">TEMPO CORP</span></h6>
-        <p>Aenean fermentum, elit eget tinci condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</p>
-      </div>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <h2>Last News</h2>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <img src="/images/calendar-icon1.jpg" class="img-responsive" alt="icon">
-      </div>
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-        <h5>TEMPORIBUS AUTEM</h5>
-        <h6><span class="text-muted">FACERE POSSIMUS</span></h6>
-        <p>Donec non enim in turpis pulvinar facilisis.</p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <img src="/images/calendar-icon2.jpg" class="img-responsive" alt="icon">
-      </div>
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-        <h5>TEMPORIBUS AUTEM</h5>
-        <h6><span class="text-muted">FACERE POSSIMUS</span></h6>
-        <p>PDonec non enim in turpis pulvinar facilisis.</p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <img src="/images/calendar-icon3.jpg" class="img-responsive" alt="icon">
-      </div>
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-        <h5>TEMPORIBUS AUTEM</h5>
-        <h6><span class="text-muted">FACERE POSSIMUS</span></h6>
-        <p>Donec non enim in turpis pulvinar facilisis.</p>
-      </div>
-    </div>
-  </div><!-- .row testimonials -->
-  <%= render '/articles/newest_articles' %>
-  <%= render '/testimonials/newest_testimonials' %>
-  </div><!-- .container -->
+</div><!-- .container -->

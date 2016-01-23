@@ -1,0 +1,93 @@
+<div class="container product">
+  <div class="row-feautures">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <img src="<%= @product.image_src %>" width="250px" height="200px">
+    </div>
+  </div>
+  <div class="row-testimonials">
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+      <h2><%= link_to @product.name %></h2>
+      <p><%= @product.description %></p>
+      <div>
+        <ul class="product p-left">
+          <li>Months: <%= @product.months%></li>
+          <li>Price: <%= number_to_currency(@product.price, precision: 2, unit: '£') %></li>
+          <li>
+            <%= form_tag("/payments", remote: true, id: "payments_tag") do %>
+              <%= render "shared/stripe_checkout_button" %>
+            <% end %>
+          </li>
+        </ul>
+        <!-- <ul class="product p-right">
+          <%= link_to 'Edit', edit_product_path(@product) %> |
+          <%= link_to 'Back', products_path %>
+        </ul> -->
+        
+      </div>
+    </div>
+    <div class="row-testimonials">
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+        <p><%= link_to 'Add Testimonial', "#", data: {target: "#myModal", toggle: "modal", keyboard: "true"} %></p>
+        <% unless @product.testimonials.first.nil? %>
+          <h2>Testimonials</h2>
+          <hr>
+          <% cache(cache_key_for_testimonials) do %>
+            <% @product.testimonials.order(updated_at: :desc).each do |testimonial| %>
+              <% unless testimonial.nil? %>
+                <p>
+                  <strong>Name:</strong>
+                  <% cache(testimonial.name) do %>
+                    <%= testimonial.name %>
+                  <% end %>
+                </p>
+                <p>
+                <strong>Testimonial:</strong>
+                <% cache(testimonial.body) do %>
+                  <%= testimonial.body %>
+                <% end %>
+                </p>
+                <% cache((testimonial.id).to_s + "destroy") do %>
+                  <%= link_to 'Destroy', [testimonial.product, testimonial], method: :delete, data: { confirm: 'Are your sure?' } %>
+                <% end %>
+                <hr>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div> <!-- col-xs-9 col-sm-9 col-md-9 col-lg-9 -->
+    </div>
+  </div>
+</div>
+
+<div class="article modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">New Article</h3>
+      </div>
+      <div class="modal-body">
+        <%= form_for([@product, @product.testimonials.build]) do |t| %>
+          <p><h3>New Testimonial</h3></p>
+          <p>
+          <%= t.label :name %><br>
+          <%= t.text_field :name %>
+        </p>
+          <p>
+          <%= t.label :email  %><br>
+          <%= t.text_field :email %>
+        </p>
+           <p>
+          <%= t.label :body %><br>
+          <%= t.text_area :body %>
+        </p>
+        <p>
+          <%= t.submit %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><!-- .modal .fade -->
+

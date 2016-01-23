@@ -6,9 +6,9 @@ class Article < ActiveRecord::Base
 
   validates :title, :author, :date, :body, presence: true
   validates :title, :author, uniqueness: true
-  validates :title, length: { maximum: 30 }
+  validates :title, length: { maximum: 60 }
   validates :author, length: { maximum: 30 }
-  validates :body, length: { in: 20..300 }
+  validates :body, length: { in: 20..3000 }
   validates :date, length: { is: 10 }
   
 end
