@@ -1,34 +1,33 @@
 <header>
   <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>  
-  
-  <nav class="fixed">   
-    <div class="nav-header">  
-      <div class="hidden-xs">
-        <p class="nav-logo">The Adventure Traveller</p>
-        <div class="nav-login">
-          <ul class="navbar">
-            <% if user_signed_in? %>
-              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>         
-            <% else %>
-              <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
-              <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
-            <% end %>
-          </ul>
-        </div>
-        <ul class="navbar">
-          <li><%= link_to 'Home', root_path, 'id'=>'nav-home' %>
-          <li><%= link_to 'About', about_path, 'id' => 'nav-about' %>
-          <li><%= link_to 'Destinations', destinations_path, 'id'=>'nav-destinations' %>
-          <li data-no-turbolink><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
-          <li><%= link_to 'Blog', blog_path, 'id'=>'nav-blog' %>
+  <script>
+    // (function(d, s, id) {
+    //   var js, fjs = d.getElementsByTagName(s)[0];
+    //   if (d.getElementById(id)) return;
+    //   js = d.createElement(s); js.id = id;
+    //   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    //   fjs.parentNode.insertBefore(js, fjs);
+    // }(document, 'script', 'facebook-jssdk'));
+  </script>  
+  <div class="nav-container">   
+    <div class="hidden-xs">
+      <p id="logo">The Adventure Traveller</p>
+      <nav class="login">
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>         
+          <% else %>
+            <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
+            <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
+            <li>
+              <select>
+                <option>ENG</option>
+                <option>SPA</option>
+              </select>
+            </li>
+          <% end %>
         </ul>
+        <p>Contact Us CALL +44(0)7710130116</p>
         <!-- login -->
         <% if user_signed_in? %>
           <ul class="login">
@@ -45,17 +44,68 @@
             </li>
           </ul>
         <% end %>
-   
-        <% flash.each do |key, value| %>
-          <% if key == 'alert' %>
-            <div class="alert alert-danger message"><%=value%></div>
-          <% elsif key == 'notice' %>
-            <div class="alert alert-success message"><%=value%></div>
-          <% end %>
+      </nav>
+      <nav class="navbar" >
+        <ul>
+          <li><%= link_to 'Home', root_path, 'id'=>'nav-home' %>
+          <li><%= link_to 'About', about_path, 'id' => 'nav-about' %>
+          <li><%= link_to 'Destinations', destinations_path, 'id'=>'nav-destinations' %>
+          <li data-no-turbolink><%= link_to 'Contact', contact_path, 'id'=>'nav-contact' %>
+          <li><%= link_to 'Blog', blog_path, 'id'=>'nav-blog' %>
+        </ul>
+      </nav>
+
+      <% flash.each do |key, value| %>
+        <% if key == 'alert' %>
+          <div class="alert alert-danger message"><%=value%></div>
+        <% elsif key == 'notice' %>
+          <div class="alert alert-success message"><%=value%></div>
         <% end %>
-      </div><!-- .hidden-xs -->   
-    </div> <!-- .nav-header -->
-  </nav> <!-- .fixed -->
+      <% end %>
+    </div><!-- .hidden-xs -->   
+  </div> <!-- .nav-container -->
+
+  <div class="hidden-xs">
+    <div class="space">
+      <div id="content">
+        <div data-ride="carousel"  class="carousel slide" id="myCarousel">
+          <% if @body_id == 'destinations' %>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="/images/_hero-images/map.jpg" alt="">
+                <div class="container">
+                  <%= link_to 'North America', destinations_path %>
+                  <%= link_to 'South America', destinations_path %>
+                  <%= link_to 'Europe', destinations_path %>
+                  <%= link_to 'Africa', destinations_path %>
+                  <%= link_to 'Asia', destinations_path %>
+                  <%= link_to 'Oceanic', destinations_path %>
+                  <%= link_to 'Polar Region', destinations_path %>
+                </div><!-- .container -->
+              </div><!-- .item -->
+            </div><!-- .carousel inner -->
+          <% else %>
+            <ol class="carousel-indicators">
+              <li class="" data-slide-to="0" data-target="#myCarousel"></li>
+              <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="/images/_hero-images/wooden_bridge.jpg" alt="">
+                <div class="container"></div>
+              </div><!-- .item -->
+              <div class="item">
+                <img src="/images/_hero-images/van.jpg" alt="">
+                <div class="container"></div>
+              </div><!-- .item -->
+              <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
+              <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div><!-- .carousel inner -->
+          <% end %>
+        </div><!-- .carousel slide-->
+      </div><!-- .content -->
+    </div><!-- .space -->
+  </div><!-- .hidden-xs -->
 
   <nav class="fixed">
     <div class="nav-header-mobile">
@@ -75,6 +125,7 @@
               <% else %>
                 <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %>|
                 <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
+                <li><%= link_to 'Languages' %>
               <% end %>
             </ul>
             <!-- login -->
@@ -105,48 +156,6 @@
       </div> <!-- .visible-xs -->  
     </div><!-- .nav-header-mobile -->
   </nav><!-- .fixed -->
-
-  <div class="hidden-xs">
-    <div class="space">
-      <div id="content">
-        <div data-ride="carousel"  class="carousel slide" id="myCarousel">
-          <ol class="carousel-indicators">
-            <li class="" data-slide-to="0" data-target="#myCarousel"></li>
-            <li data-slide-to="1" data-target="#myCarousel" class="active"></li>
-            <li data-slide-to="2" data-target="#myCarousel" class=""></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="item active">
-              <img src="/images/_hero-images/hi-machu-pichu.jpg" alt="">
-              <div class="container">
-                <h1>Example Headline</h1>
-                <p>A longer summary of what we do</p>
-                <p><%= link_to 'Sign up today', new_user_registration_path, 'role'=>'button', 'class'=>'btn btn-lg btn-info'%></p>
-              </div><!-- .container -->
-            </div><!-- .item -->
-            <!-- <div class="item">
-              <img src="/images/_hero-images/hero_Iceland.jpg" alt="">
-              <div class="container">
-                <h1>Second Headline</h1>
-                <p>Description of the second slide</p>
-                <p><a role="button" href="#" class="btn btn-lg btn-info">Read more here</a></p>
-              </div>
-            </div>-->
-            <div class="item">
-              <img src="/images/_hero-images/hero_desert.jpg" alt="">
-              <div class="container">
-                <h1>Third Headline</h1>
-                <p>One more slide about the product</p>
-                <p><a role="button" href="#" class="btn btn-lg btn-info">Features</a></p>
-              </div><!-- .container -->
-            </div><!-- .item -->
-          </div><!-- .carousel inner -->
-          <a data-slide="prev" href="#myCarousel" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
-          <a data-slide="next" href="#myCarousel" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div><!-- .carousel slide-->
-      </div><!-- .content -->
-    </div><!-- .space -->
-  </div><!-- .hidden-xs -->
 
   <div class="visible-xs">
     <div class="space-mobile">
@@ -190,3 +199,5 @@
     </div><!-- .space -->
   </div><!-- .visible-xs -->
 </header>
+
+  

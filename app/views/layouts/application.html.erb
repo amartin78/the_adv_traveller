@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link href="nouislider.min.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -22,6 +23,7 @@
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/compass.png">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   </head>
@@ -30,17 +32,14 @@
     <%= yield %>
     <%= render '/layouts/footer' %>
     <script>
-    !function($){
-      $('.lightbox').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        gallery: { enabled: true}
-      });
-    }(window.jQuery);
+    // !function($){
+    //   $('.lightbox').magnificPopup({
+    //     delegate: 'a',
+    //     type: 'image',
+    //     gallery: { enabled: true}
+    //   });
+    // }(window.jQuery);
     </script>
-    <script>$(function(){ 
-      $('#pikame').pikachoose({ fadeThumbsIn: true, carouselVertical:true, transition:[4] });
-    });</script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -54,5 +53,6 @@
       })();
     </script>
 <!--End of Tawk.to Script-->
+    <script src="nouislider.min.js"></script>
   </body>
 </html>

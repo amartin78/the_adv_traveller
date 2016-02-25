@@ -1,3 +1,100 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#enews {
+	color: #fff;
+}
+
+#enews a:link, #enews a:visited, #enews a:active, #enews a:active {
+	color: #444;
+}
+
+.panel-body ul {
+	padding: 10px 0 10px 0;
+}
+
+.panel-body ul > li {
+  text-align: left;
+}
+
+.panel-body hr {
+	margin: 0;
+	background: #c6b393;
+}
+
+.panel-body p {
+	font-size: 1.2rem;
+	padding-bottom: 8px;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.panel-body p:last-of-type {
+	padding-bottom: 0;
+}
+
+.panel-body hr:last-child {
+	visibility: hidden;
+}
+
+.panel-body ul:last-of-type {
+	padding-bottom: 3px;
+}
+
+.panel-body#mission  {
+	padding-bottom: 12px;
+}
+
+.panel-body#pikame {
+	padding: 0;
+	border: 5px solid #c6b393;
+}
+
+.panel-body#pikame ul {
+	padding: 0;
+	border-top: 5px solid #c6b393;
+}
+
+.panel-body#tips ul > li {
+	list-style-type: none;
+	font-size: 1.2rem;
+}
+
+.panel-body#tips ul > li:nth-of-type(even) {
+	margin: 0 0 8px 10px;
+}
+
+.panel-footer ul > li {
+  padding: 0;
+  text-align: left;
+}
+
+.panel-info {
+	border-color: #c6b393;
+}
+
+.panel-info > .panel-heading {
+	background-color: #c6b393;
+	border-bottom: #c6b393;
+	color: #fff;
+}
+
+.panel-info > .panel-body a {
+	text-transform: none;
+	font-size:1.2rem;
+	font-weight: normal;
+}
+
+.panel-info > .panel-body h5 {
+	padding-bottom: 5px;
+	text-align: left;
+	margin: 0;
+}
+
+.panel-info > .panel-body a:link, .panel-info > .panel-body a:visited, .panel-info > .panel-body a:active, 
+.panel-info > .panel-body a:active{
+	color: #444;
+}
+

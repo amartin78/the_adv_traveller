@@ -1,0 +1,66 @@
+<div class="panel panel-info search">
+  <div class="panel-heading">
+    <h3 class="panel-title">Find your adventure</h3>
+  </div>
+  <div class="panel-body">
+    <label>Area</label>
+    <select>
+      <option>Africa</option>
+      <option>Asia</option>
+      <option>Oceanic</option>
+      <option>America</option>
+      <option>Europe</option>
+    </select>
+    <label>Country</label>
+    <select>
+      <option>Tanzania</option>
+      <option>Botswana</option>
+    </select>
+    <label>Region</label>
+    <select>
+      <option>Kilimanjaro</option>
+      <option>Mara</option>
+      <option>Katavi</option>
+    </select>
+    <div class="slider">
+      <div id="slider-snap"></div>
+      <span class="slider-val" id="slider-snap-value-lower"></span>
+      <span class="slider-val" id="slider-snap-value-upper"></span>
+      <script>
+        var snapSlider = document.getElementById('slider-snap');
+        noUiSlider.create(snapSlider, {
+          start: [0, 2000],
+          snap: true,
+          connect: true,
+          range: {
+            'min': 0,
+            '10%': 200,
+            '20%': 400,
+            '30%': 600,
+            '40%': 800,
+            '50%': 1000,
+            '60%': 1200,
+            '70%': 1400,
+            '80%': 1600,
+            '90%': 1800,
+            'max': 2000
+          },
+          format: wNumb({
+            decimals: 0,
+            prefix: '£',
+          })
+        });
+      </script>
+      <script>
+        var snapValues = [
+        document.getElementById('slider-snap-value-lower'),
+        document.getElementById('slider-snap-value-upper')
+        ];
+        snapSlider.noUiSlider.on('update', function( values, handle ) {
+        snapValues[handle].innerHTML = values[handle];
+        });
+      </script>
+    </div>
+    <button class="btn btn-info btn-large">Search</button>
+  </div>
+</div>

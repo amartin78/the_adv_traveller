@@ -1,82 +1,70 @@
-<div class="container product" id="product">
-  
-    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
-      <div class="tips">
-        <h3>Travel Tips</h3>
-        <h4>Time Zone</h4>
-        <p>UTC/GMT + 3:00hours</p>
-        <h4>Languages</h4>
-        <p>Swahili, English</p>
-        <h4>Foreign Exchange Rate</h4>
-        <p>1.00 GBP = 2,505.29 TZS</p>
-        <h4>Weather</h4>
-        <p>31°/17°</p>
+<% @body_id = 'destinations' %>
+<div class="container">
+  <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Travel Tips</h3>
       </div>
-      <%= render '/pages/enews' %>
-      <%= render '/pages/brochure' %>
-    </div><!-- col-xs-1 col-sm-3 col-md-3 col-lg-3 -->
- 
-  
-    <div class="col-xs-3 col-sm-6 col-md-6 col-lg-6">
-      <div class="info">
-        <div>
-          <h3>Serengeti</h3>
-        </div>
-        <div>
-            <ul id="pikame">
-              <li><a href="/images/thumb-austria.jpg"><img src="/images/_destinations/africa/serengeti/seren11.jpg"></a></li>
-              <li><a href="/images/thumb-india.jpg"><img src="/images/_destinations/africa/serengeti/seren13.jpg"></a></li>
-              <li><a href="/images/thumb-new-zealand.jpg"><img src="/images/_destinations/africa/serengeti/seren14.jpg"></a></li>
-              <li><a href="/images/thumb-seren.jpg"><img src="/images/_destinations/africa/serengeti/seren8.jpg"></a></li>
-            </ul>
-          <div class="menu-product">
-            <ul>
-              <li><a href="#overview" onclick="overview()">Overview</a>
-              <li><a href="#dates-prices" onclick="dates_prices()">Dates and prices</a>
-              <li><a href="#gallery" onclick="gallery()">Gallery</a>
-              <li><a href="#reviews" onclick="reviews()">Reviews</a>
-            </ul>
-          </div>
-          <div id="overview">
-            <p>The park covers 14,750 square kilometres (5,700 sq mi)[7] of grassland plains, savanna, riverine forest, and woodlands. The park lies in northwestern Tanzania, bordered to the north by the Kenyan border, where it is continuous with the Maasai Mara National Reserve. To the southeast of the park is the Ngorongoro Conservation Area, to the southwest lies Maswa Game Reserve, to the west are the Ikorongo and Grumeti Game Reserves, and to the northeast and east lies the Loliondo Game Control Area. Together, these areas form the larger Serengeti ecosystem.</p>
-          </div>
-          <div id="dates-prices">
-            The Dates and prices
-          </div>
-          <div id="gallery">
-            The Gallery
-          </div>
-          <div id="reviews">
-            The Reviews
-          </div>
-        </div>
-      </div><!-- .info -->
-    </div><!-- .col-xs-3 col-md-9 -->
-    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
-      <div class="reviews">
-        <h3>User Reviews</h3>
-        <hr>
-        <div class="rating"><span "sp2">&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></div>
-        <p>By: Alec Leamas</p>
-        <p>It was a great experience...</p>
-        <p>Date: 22 August 2014</p>
-        <hr>
-        <div class="rating"><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></div>
-        <p>By: Alec Leamas</p>
-        <p>It was a great experience...</p>
-        <p>Date: 22 August 2014</p>
-        <hr>
-        <div class="rating"><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span></div>
-        <p>By: Alec Leamas</p>
-        <p>It was a great experience...</p>
-        <p>Date: 22 August 2014</p>
-        <hr>
-        <!-- <%= link_to "Add testimonial", new_product_testimonial_path(@product) %> -->
-        <p><%= link_to 'Add Testimonial', "#", data: {target: "#myModal", toggle: "modal", keyboard: "true"} %></p>
-        <%= render '/articles/newest_articles' %>
+      <div class="panel-body" id="tips">
+        <ul>
+          <li>Time Zone</li>
+          <li>UTC/GMT + 3:00hours</li>
+          <li>Languages</li>
+          <li>Swahili, English</li>
+          <li>Foreign Exchange Rate</li>
+          <li>1.00 GBP = 2,505.29 TZS</li>
+          <li>Weather</li>
+          <li>31°/17°</li>
+        </ul>
       </div>
     </div>
-  </div><!-- .reviews -->
+    <%= render '/pages/enews' %>
+    <%= render '/pages/brochure' %>
+  </div><!-- col-xs-1 col-sm-3 col-md-3 col-lg-3 -->
+  <div class="col-xs-3 col-sm-6 col-md-6 col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Tanzania</h3>
+      </div>
+      <div class="panel-body" id="pikame">
+        <ul >
+          <li><img src="/images/_destinations/africa/serengeti/seren7.jpg"></li>
+          <li><img src="/images/_destinations/africa/serengeti/seren11.jpg"></li>
+          <li><img src="/images/_destinations/africa/serengeti/seren9.jpg"></li>
+          <li><img src="/images/_destinations/africa/serengeti/seren6.jpg"></li>
+          <li><img src="/images/_destinations/africa/serengeti/seren8.jpg"></li>
+          <li><img src="/images/_destinations/africa/serengeti/seren14.jpg"></li>
+        </ul>
+      </div>
+    </div>
+    <div id="product-navbar">
+      <ul>
+        <li><a href="#a" id="over" onclick="overview()">Overview</a>
+        <li><a href="#a" onclick="dates_prices()">Dates and prices</a>
+        <li><a href="#a" onclick="tour()">Tour</a>
+        <li><a href="#a" onclick="reviews()">Reviews</a>
+      </ul>
+      <div id="overview">
+        <p>The park covers 14,750 square kilometres (5,700 sq mi)[7] of grassland plains, savanna, riverine forest, and woodlands. The park lies in northwestern Tanzania, bordered to the north by the Kenyan border, where it is continuous with the Maasai Mara National Reserve. To the southeast of the park is the Ngorongoro Conservation Area, to the southwest lies Maswa Game Reserve, to the west are the Ikorongo and Grumeti Game Reserves, and to the northeast and east lies the Loliondo Game Control Area. Together, these areas form the larger Serengeti ecosystem.</p>
+      </div>
+      <div id="dates-prices">
+        <p>The Dates and prices</p>
+      </div>
+      <div id="tour">
+        <p>The Tour</p>
+      </div>
+      <div id="reviews">
+        <p>The Reviews</p>
+      </div>
+    </div><!-- .product-navbar -->
+    <div id="book">
+      <button class="btn btn-large clearfix">Book Now!</button>
+    </div>
+  </div><!-- .col-xs-3 col-md-6 col-lg-6 -->
+  <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+    <%= render '/articles/newest_articles' %>
+    <%= render '/products/reviews' %>
+  </div>
 </div><!-- .container-product -->
 
 <div class="article modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -138,4 +126,9 @@
   function rate(){
     alert("lakjdhkaj");
   }
+</script>
+<script>
+  $(function(){ 
+    $('#pikame ul').pikachoose({speed:5500, transition:[0], animationSpeed:150 });
+  });
 </script>

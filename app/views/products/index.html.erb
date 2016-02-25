@@ -1,120 +1,63 @@
 <% @body_id='destinations' %>
-<% cache(cache_key_for_products) do %>
-  <% @products.each do |product| %>
-    <% if product.id.odd? %>
-      <div class="container product">
-        <div class="row-feautures">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <% cache(product.image_src) do %>
-              <img src="<%= product.image_src %>" width="250px" height="200px">
-            <% end %>
-          </div>
-        </div>
-        <div class="row-testimonials">
-          <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <h2>
-                <% cache(product.name) do %>
-                  <%= link_to product.name, product %>
-                <% end %>
-              </h2>
-              <p>
-                <% cache(product.description) do %>
-                  <%= product.description %>
-                <% end %>
-              </p>
-            <div>
-              <ul class="product p-left">
-                <li>
-                  <% cache(product.months) do %>
-                    Months: <%= product.months %>
-                  <% end %>
-                </li>
-                <li>
-                  Price: 
-                  <% cache(product.price) do %>
-                    <%= number_to_currency(product.price, precision: 2, unit: '£') %>
-                  <% end %>
-                </li>
-              </ul>
-              <!-- <ul class="product p-right">
-                <li>
-                  <% cache((product.id).to_s + "show") do %>
-                    <%= link_to 'Show', product %>
-                  <% end %>
-                </li>
-                <li>
-                  <% cache((product.id).to_s + "edit") do %>
-                    <%= link_to 'Edit', edit_product_path(product) %>
-                  <% end %>
-                </li>
-                <li>
-                  <% cache((product.id).to_s + "destroy")do %>
-                    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  <% end %>
-                </li>
-              </ul> -->
+<div class="container">
+  <div class="row feature">
+    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+      <%= render '/products/search' %>
+      <%= render '/articles/newest_articles' %>
+      <%= render '/pages/enews' %>
+      <%= render '/pages/brochure' %>
+      <%= render '/products/reviews' %>
+    </div><!-- col-xs-1 col-sm-3 col-md-3 col-lg-3 -->
+    <% @products.limit(6).each do |p| %>
+      <div class="col-xs-1 col-sm-9 col-md-9 col-lg-9">
+        <div class="product clearfix" id="product-list">
+          <%= link_to product_path(p.id) do %>
+            <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+                <%= image_tag("#{p.image_src}", {:class=>'img-responsive', :alt=>'#{p.name}'}) %>
             </div>
-          </div>
-        </div>
-      </div>
-    <% else %>
-      <div class="container product">
-        <div class="row-testimonials">
-          <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <h2>
-                <% cache(product.name) do %>
-                  <%= link_to product.name, product %>
-                <% end %>
-              </h2>
-              <p>
-                <% cache(product.description) do %>
-                  <%= product.description %>
-                <% end %>
-              </p>
-            <div>
-              <ul class="product p-right">
-                <li>Months: 
-                  <% cache(product.months) do %>
-                    <%= product.months %>
-                  <% end %>
-                <li>
-                  Price: 
-                  <% cache(product.price) do %>
-                    <%= number_to_currency(product.price, precision: 2, unit: '£') %>
-                  <% end %>
-                </li>
-              </ul>
-              <!-- <ul class="product p-left">
-                <li>
-                  <% cache((product.id).to_s + "show") do %>
-                    <%= link_to 'Show', product %>
-                  <% end %>
-                </li>
-                <li>
-                  <% cache((product.id).to_s + "edit") do %>
-                    <%= link_to 'Edit', edit_product_path(product) %>
-                  <% end %>
-                <li>
-                  <% cache((product.id).to_s + "destroy") do %>
-                    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  <% end %>
-                </li>
-              </ul> -->
+            <div class="col-xs-1 col-sm-6 col-md-6 col-lg-6">
+            <div id="product-points">
+              <ul>
+                <li>Walking through forest to catch a glimpse of the Kilimanjaro Colobus Monkeys.</li>
+                <li>The sight of the permanent snow capped peak of Mt Kilimanjaro (5895m) provides a constant source of inspiration when viewed from the vast plains.</li>
+                <li>It is also a natural focus for any fit trekker keen to summit the highest peak in Africa. Witness big game on open savannah.</li>
+              </ul> 
+            </div>     
             </div>
-          </div>
-        </div>
-        <div class="row-feautures">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <% cache(product.image_src) do %>
-              <img src="<%= product.image_src %>" width="250px" height="200px">
-            <% end %>
-          </div>
-        </div>
-      </div>
+            <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
+              <div id="product-price">
+                <ul>
+                <li>From <span>£600</span> without flights</li>
+                <li>From <span>£900</span> with flights</li>
+              </ul>
+              </div>
+              <div class="rating">
+                <p>Customer rating</p>
+                <span id="sp2">&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+              </div>
+              <div id="calendar">
+                <p>Availability</p>
+                <ul>
+                  <li>J</li>
+                  <li>F</li>
+                  <li>M</li>
+                  <li>A</li>
+                  <li>M</li>
+                  <li>J</li>
+                  <li>J</li>
+                  <li>A</li>
+                  <li>S</li>
+                  <li>O</li>
+                  <li>N</li>
+                  <li>D</li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        </div><!-- .product -->
+      </div><!-- col-xs-1 col-sm-9 col-md-9 col-lg-9 -->
     <% end %>
-  <% end %>
-<% end %>
-<!-- <div class="container product">
-  <%= link_to 'New Product', new_product_path %>
-</div> -->
+  </div>
+</div>
+
 

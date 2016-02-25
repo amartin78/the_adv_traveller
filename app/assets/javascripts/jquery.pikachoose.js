@@ -580,7 +580,7 @@
 			}).attr('src',data.source);
 			var cur = data.index+1;
 			var total = this.thumbs.length;
-			this.counter.html(cur+"/"+total);
+			// this.counter.html(cur+"/"+total);
 			if(data.clickThrough !== ""){
 				if(this.anchor === null){
 					this.anchor	= this.image.wrap("<a>").parent();

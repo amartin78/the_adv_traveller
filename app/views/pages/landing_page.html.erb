@@ -2,7 +2,7 @@
 <% @header_id = 'top' %>
 <div class="container">
   <div class="row testimonials">
-    <%= render 'featured_product' %>
+    <%= render '/products/featured_product' %>
   </div><!-- .row .testimonials -->
   <div class="row testimonials" id="reviews">
     <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3">
@@ -32,11 +32,11 @@
   </div>
   <div class="row feature">
     <div class="col-xs-1 col-sm-6 col-md-6 col-lg-6">
-      <div class="panel panel-info" id="mission">
+      <div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title">Why Travel With Us...</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" id="mission">
           <p>Whether we are selecting partners or designing our exclusive tours, we have a commitment to only choosing the best. Our teams know the difference between good and great, and this leads how we find our partners, our experiences and our destinations.</p>
           <p>Every one of the tours we design is unique – because each of our clients is unique! When you customise a tour with us, you can rest assured that our team is working hard to make your perfect itinerary a reality using our dynamic portfolio of options.          
           </p>
