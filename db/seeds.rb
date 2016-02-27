@@ -16,7 +16,7 @@ products = Product.create([
 	{name: 'Thailand', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
 	price: 1750.0, months: 'February-November', image_src: '/images/fishing.jpg', featured: true},
 	{name: 'Tanzania', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 2350.0, months: 'April-December', image_src: '/images/tanzania-kilimanjar.jpg', featured: true},
+	price: 2350.0, months: 'April-December', image_src: '/images/tanzania-kilimanjaro.jpg', featured: true},
   {name: 'Pyrenees', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
   price: 1320.0, months: 'March-August', image_src: '/images/pyrenees.jpg', featured: true},
   {name: 'Colosseum', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
@@ -33,11 +33,12 @@ testimonials = Product.find(2).testimonials.create([
 ])
 
 articles = Article.create([
-  {title: 'Venecia', author: 'John', date:'22/01/2014', body: 'Aenean ultricies mi vitae est.'},
-  {title: 'Roma', author: 'Peter', date:'25/09/2014', body: 'Aenean ultricies mi vitae est.'},
-  {title: 'Alicante', author: 'Sergio', date:'02/01/2014', body: 'Aenean ultricies mi vitae est.'},
-  {title: 'Lisboa', author: 'Vanessa', date:'16/09/2014', body: 'Aenean ultricies mi vitae est.'},
-  {title: 'Paris', author: 'Victor', date:'14/12/2014', body: 'Aenean ultricies mi vitae est.'}
+  {title: 'Venecia: the Floating City', author: 'John', date:'22-01-2014', body: 'Aenean ultricies mi vitae est.'},
+  {title: 'Roma: Center of the Italian Renaissance', author: 'Peter', date:'25-09-2014', body: 'Aenean ultricies mi vitae est.'},
+  {title: 'Alicante: a Historic Mediterranean Port', author: 'Sergio', date:'02-01-2014', body: 'Aenean ultricies mi vitae est.'},
+  {title: 'Lisboa: One of the Oldest Cities in the World', author: 'Vanessa', date:'16-09-2014', body: 'Aenean ultricies mi vitae est.'},
+  {title: 'Paris: Home of the Most visited Art Museum in the World', author: 'Victor', date:'14-12-2014', body: 'Aenean ultricies mi vitae est.'}
+  {title: 'Asturias: visit Picos de Europa National Park', author: 'Victor', date:'14-12-2014', body: 'Aenean ultricies mi vitae est.'}
 ])
 
 comments = Article.last.comments.create([
