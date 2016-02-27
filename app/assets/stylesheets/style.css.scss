@@ -386,10 +386,11 @@ footer .container  {
 .login p {
 	display: block;
 	padding-right: 20px;
+	float: right;
 }
 
 .login  li  a {
-	text-transform: capitalize;
+	text-transform: none;
 	font-size: 1.2rem;
 	color: #fff;
 	font-weight: normal;

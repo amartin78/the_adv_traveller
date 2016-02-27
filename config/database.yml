@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: tat_production
+  database: db/tat_production
   username: antonio
   password: <%= ENV['ATLAS_DATABASE_PASSWORD'] %>

@@ -13,37 +13,52 @@
     <div class="hidden-xs">
       <p id="logo">The Adventure Traveller</p>
       <nav class="login">
-        <ul>
+        
           <% if user_signed_in? %>
-            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>         
+
+            <ul class="">
+              <li>Wellcome </li>
+              <li class="dropdown">
+                <%= link_to raw(current_user.email + '! <span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-profile' %>
+                <ul class="dropdown-menu profile">
+                  <% if current_user.is_admin == true %>
+                    <li><%= link_to 'Admin Dashboard', rails_admin_path %>
+                  <% elsif %>
+                    <li><%= link_to 'Profile', user_path(current_user.id) %>
+                  <% end %>
+                </ul>
+              </li>
+              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>
+              <li>
+                <select>
+                  <option>ENG</option>
+                  <option>SPA</option>
+                </select>
+              </li>
+            </ul>
+
+
+              
+
+
           <% else %>
-            <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
-            <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
-            <li>
-              <select>
-                <option>ENG</option>
-                <option>SPA</option>
-              </select>
-            </li>
+            <ul>
+              <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
+              <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
+              <li>
+                <select>
+                  <option>ENG</option>
+                  <option>SPA</option>
+                </select>
+              </li>
+            </ul>
           <% end %>
-        </ul>
+        
         <p>Contact Us CALL +44(0)7710130116</p>
-        <!-- login -->
-        <% if user_signed_in? %>
-          <ul class="login">
-            <li>You are logged in as:</li>
-            <li class="dropdown">
-              <%= link_to raw(current_user.email + '<span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-profile' %>
-              <ul class="dropdown-menu profile">
-                <% if current_user.is_admin == true %>
-                  <li><%= link_to 'Admin Dashboard', rails_admin_path %>
-                <% elsif %>
-                  <li><%= link_to 'Profile', user_path(current_user.id) %>
-                <% end %>
-              </ul>
-            </li>
-          </ul>
-        <% end %>
+
+
+          
+
       </nav>
       <nav class="navbar" >
         <ul>
