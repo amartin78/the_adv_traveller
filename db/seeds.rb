@@ -7,18 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 products = Product.create([
-	{name: 'Alaska', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 44.55, months: 'april-june', image_src: '/images/alaska.jpg', featured: true},
-	{name: 'Atacama Desert', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 66.75, months: 'september-december', image_src: '/images/atacama-desert.jpg', featured: true},
-	{name: 'India', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 25.35, months: 'march-august', image_src: '/images/india.jpg', featured: false},
-	{name: 'Machupichu', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 25.45, months: 'february-november', image_src: '/images/machupichu.jpg', featured: false},
+	{name: 'Austria', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
+	price: 1500.0, months: 'April-June', image_src: '/images/austria.jpg', featured: true},
+	{name: 'Botswana', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
+	price: 1950.0, months: 'September-December', image_src: '/images/beach.jpg', featured: true},
+	{name: 'Taj-Mahal', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
+	price: 2200.0, months: 'March-August', image_src: '/images/taj-mahal.jpg', featured: true},
+	{name: 'Thailand', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
+	price: 1750.0, months: 'February-November', image_src: '/images/fishing.jpg', featured: true},
 	{name: 'Tanzania', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.", 
-	price: 44.55, months: 'april-december', image_src: '/images/tanzania.jpg', featured: true},
-  {name: 'India', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-  price: 95.85, months: 'march-august', image_src: '/images/india.jpg', featured: false}
+	price: 2350.0, months: 'April-December', image_src: '/images/tanzania-kilimanjar.jpg', featured: true},
+  {name: 'Pyrenees', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+  price: 1320.0, months: 'March-August', image_src: '/images/pyrenees.jpg', featured: true},
+  {name: 'Colosseum', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+  price: 1100.0, months: 'May-September', image_src: '/images/colosseum.jpg', featured: true},
+  {name: 'New Zealand', description: "Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+  price: 3100.0, months: 'June-November', image_src: '/images/new-zealand.jpg', featured: true}
 ])
 
 testimonials = Product.find(2).testimonials.create([
@@ -43,4 +47,8 @@ comments = Article.last.comments.create([
   {commenter: 'Ana', body: 'Aenean ultricies mi vitae est.'},
   {commenter: 'Vanessa', body: 'Aenean ultricies mi vitae est.'}
 ])
+
+
+
+
 
