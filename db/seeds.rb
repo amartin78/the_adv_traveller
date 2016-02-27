@@ -37,7 +37,7 @@ articles = Article.create([
   {title: 'Roma: Center of the Italian Renaissance', author: 'Peter', date:'25-09-2014', body: 'Aenean ultricies mi vitae est.'},
   {title: 'Alicante: a Historic Mediterranean Port', author: 'Sergio', date:'02-01-2014', body: 'Aenean ultricies mi vitae est.'},
   {title: 'Lisboa: One of the Oldest Cities in the World', author: 'Vanessa', date:'16-09-2014', body: 'Aenean ultricies mi vitae est.'},
-  {title: 'Paris: Home of the Most visited Art Museum in the World', author: 'Victor', date:'14-12-2014', body: 'Aenean ultricies mi vitae est.'}
+  {title: 'Paris: Home of the Most visited Art Museum in the World', author: 'Victor', date:'14-12-2014', body: 'Aenean ultricies mi vitae est.'},
   {title: 'Asturias: visit Picos de Europa National Park', author: 'Victor', date:'14-12-2014', body: 'Aenean ultricies mi vitae est.'}
 ])
 
