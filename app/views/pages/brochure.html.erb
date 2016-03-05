@@ -1,0 +1,35 @@
+<div class="container" id="brochure">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Brochure</h3>
+    </div>
+    <div class="panel-body">
+      <div>
+        <%= label_tag(:name, "Name") %>
+        <%= text_field_tag(:fname, nil,{ placeholder:'First Name' }) %><br>
+        <%= text_field_tag(:lname, nil,{ placeholder:'Last Name' }) %>
+        <%= label_tag(:name, "Address") %>
+        <%= text_field_tag(:address1, nil,{ placeholder:'Address Line 1' }) %><br>
+        <%= text_field_tag(:address2, nil,{ placeholder:'Address Line 2' }) %><br>
+        <%= text_field_tag(:town, nil,{ placeholder:'Town / City' }) %><br>
+        <select data-placeholder = "Country" class="chosen-select">
+            <option value=""></option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Aland Islands">Aland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+        </select>
+        <%= text_field_tag(:postcode, nil,{ placeholder:'Post Code' }) %>
+        <%= label_tag(:email, "E-Mail") %>
+        <%= text_field_tag(:email, nil,{ placeholder:'E-Mail' }) %>
+        <%= submit_tag("Request Brochure", {class: "btn btn-success btn-block"}) %>
+        <script>
+          jQuery('#brochure select').chosen( {disable_search: true} );
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

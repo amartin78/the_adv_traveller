@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'pages/brochure'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => {:registrations => "registrations"}, :path => '', :path_names => { :sign_in=>'login', :sign_out=>'logout' }
   resources :users, only: [:show, :edit, :update]
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
   get 'form_output', to: 'form_example#form_output'
 
   get 'blog', to: 'articles#index'
+
+  get 'brochure', to: 'pages#brochure'
 
   # get 'payment', to: 'payments#create'
 

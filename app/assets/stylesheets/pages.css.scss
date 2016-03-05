@@ -10,6 +10,15 @@
 	color: #444;
 }
 
+.container#brochure {
+	width: 30%;
+	margin: 40px auto;
+}
+
+#brochure label {
+	font-weight: normal;
+}
+
 .panel-body ul {
 	padding: 10px 0 10px 0;
 }
@@ -20,7 +29,7 @@
 
 .panel-body hr {
 	margin: 0;
-	background: #c6b393;
+	background-color: #c6b393;
 }
 
 .panel-body p {

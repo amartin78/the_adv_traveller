@@ -13,52 +13,43 @@
     <div class="hidden-xs">
       <p id="logo">The Adventure Traveller</p>
       <nav class="login">
-        
-          <% if user_signed_in? %>
-
-            <ul class="">
-              <li>Wellcome </li>
-              <li class="dropdown">
-                <%= link_to raw(current_user.email + '! <span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'id'=>'nav-profile' %>
-                <ul class="dropdown-menu profile">
-                  <% if current_user.is_admin == true %>
-                    <li><%= link_to 'Admin Dashboard', rails_admin_path %>
-                  <% elsif %>
-                    <li><%= link_to 'Profile', user_path(current_user.id) %>
-                  <% end %>
-                </ul>
-              </li>
-              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, 'id'=>'nav-signout' %></li>
-              <li>
-                <select>
-                  <option>ENG</option>
-                  <option>SPA</option>
-                </select>
-              </li>
-            </ul>
-
-
-              
-
-
-          <% else %>
-            <ul>
-              <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
-              <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
-              <li>
-                <select>
-                  <option>ENG</option>
-                  <option>SPA</option>
-                </select>
-              </li>
-            </ul>
-          <% end %>
-        
+        <% if user_signed_in? %>
+          <ul>
+            <li>Welcome </li>
+            <li class="dropdown">
+              <%= link_to raw('Antonio' + '! <span class="caret"></span>'), '', 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown' %>
+              <ul class="dropdown-menu">
+                <% if current_user.is_admin == true %>
+                  <li><%= link_to 'Admin Dashboard', rails_admin_path %></li>
+                <% else %>
+                  <li><%= link_to 'Profile', user_path(current_user.id) %></li>
+                  <li><a>My Bookings</a></li>
+                  <li><a>My Photos</a></li>
+                <% end %>
+                <hr>
+                <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+            <li>
+              <select>
+                <option>ENG</option>
+                <option>SPA</option>
+              </select>
+            </li>
+          </ul>
+        <% else %>
+          <ul>
+            <li><%= link_to 'Log In', new_user_session_path, 'id'=>'nav-signin' %> |
+            <%= link_to 'Sign Up', new_user_registration_path, 'id'=>'nav-signup' %></li>
+            <li>
+              <select>
+                <option>ENG</option>
+                <option>SPA</option>
+              </select>
+            </li>
+          </ul>
+        <% end %>
         <p>Contact Us CALL +44(0)7710130116</p>
-
-
-          
-
       </nav>
       <nav class="navbar" >
         <ul>
@@ -69,12 +60,17 @@
           <li><%= link_to 'Blog', blog_path, 'id'=>'nav-blog' %>
         </ul>
       </nav>
-
       <% flash.each do |key, value| %>
         <% if key == 'alert' %>
-          <div class="alert alert-danger message"><%=value%></div>
+          <div class="alert alert-danger message fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <p><%=value%></p>
+          </div>
         <% elsif key == 'notice' %>
-          <div class="alert alert-success message"><%=value%></div>
+          <div class="alert alert-success message fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <p><%=value%></p>
+          </div>
         <% end %>
       <% end %>
     </div><!-- .hidden-xs -->   
@@ -190,14 +186,6 @@
                 <p><%= link_to 'Sign up today', new_user_registration_path, 'role'=>'button', 'class'=>'btn btn-lg btn-info'%></p>
               </div><!-- .container -->
             </div><!-- .item -->
-            <!-- <div class="item">
-              <img src="/images/_hero-images/mobile/hero_Iceland.jpg" alt="">
-              <div class="container">
-                <h1>Second Headline</h1>
-                <p>Description of the second slide</p>
-                <p><a role="button" href="#" class="btn btn-lg btn-info">Read more here</a></p>
-              </div>
-            </div> -->
             <div class="item">
               <img src="/images/_hero-images/mobile/hero_desert.jpg" alt="">
               <div class="container">
@@ -214,5 +202,6 @@
     </div><!-- .space -->
   </div><!-- .visible-xs -->
 </header>
+
 
   

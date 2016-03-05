@@ -7,7 +7,9 @@
       <a href="">Please enter your details below and we will send you the brochures of your choice as soon as possible.</a>
     </div>
     <div class="col-xs-1 col-sm-4 col-md-4 col-lg-4">
-      <a href=""><img src="/images/brochure_icon.png"></a>
+      <%= link_to(brochure_path) do %>
+        <%= image_tag("/images/brochure_icon.png") %>
+      <% end %>
     </div>
     <div style="clear:both;"></div>
   </div>

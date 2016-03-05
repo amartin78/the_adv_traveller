@@ -1,3 +1,30 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container#signin {
+	width: 30%;
+	margin: 40px auto;
+}
+
+.container#signup {
+	width: 35%;
+	margin: 40px auto;
+}
+
+#signin label, #signup label {
+	font-weight: normal;
+}
+
+.container#signup select {
+	background-color: #FFF;
+	color: #444;
+	width: 70px;
+}
+
+.btn#signin {
+	width: 70%;
+}
+
+.split-left {
+}

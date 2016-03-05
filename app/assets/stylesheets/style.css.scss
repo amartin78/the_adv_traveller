@@ -33,11 +33,8 @@ footer p {
 }
 
 hr {
-  background: #ccc;
   border: 0;
-  color: #eee;
   height: 1px;
-  margin: 30px 0px;
 }
 
 iframe {
@@ -257,6 +254,23 @@ footer .container  {
   }
 }
 
+.message {
+	margin: 10px 0 0 52px;
+}
+
+.message p {
+	padding-right: 100px;
+}
+
+.message a:link, .message a:visited {
+	color: #444;
+}
+
+.close {
+	font-size: 1.7rem;
+	font-weight: normal;
+}
+
 .mobile button {
   margin: 6px 0;
 }
@@ -350,13 +364,6 @@ footer .container  {
 	color: #354554;
 }
 
-.nav {
-  clear: both;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 #logo {
   clear: both;
   float: left;
@@ -368,6 +375,34 @@ footer .container  {
   color: #fff;
 }
 
+.alert {
+	padding: 10px;
+}
+
+.nav {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu {
+	min-width: 0px;
+	width: auto;
+	left: auto;
+	right: 0px;
+	background-color: #627383;
+}
+
+.dropdown-menu > li {
+	font-size: 1.2rem;
+	padding: 1px 10px;
+}
+
+.dropdown-menu>li > a {
+	padding: 0px 10px;
+}
+
 .login {
 	color: #fff;
 	list-style: none;
@@ -376,11 +411,15 @@ footer .container  {
 }
 
 .login ul {
-	margin-bottom: 5px;
+	margin: 0 20px 5px 0;
 }
 
 .login li {
 	display: inline;
+}
+
+.login ul:nth-child(2) li {
+	display: block;
 }
 
 .login p {
@@ -389,7 +428,7 @@ footer .container  {
 	float: right;
 }
 
-.login  li  a {
+.login  li a {
 	text-transform: none;
 	font-size: 1.2rem;
 	color: #fff;
@@ -397,12 +436,17 @@ footer .container  {
 }
 
 .login select {
-	/*background-color: #428bca;*/
 	border-color: #354554;
 	width: 60px;
 	height: 20px;
 	color: #354554;
-	margin-left: 20px;
+	margin-left: 36px;
+}
+
+.login hr {
+	margin: 8px auto;
+	width: 80%;
+	background-color: #fff;
 }
 
 .nav-container { 

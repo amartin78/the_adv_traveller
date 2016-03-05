@@ -1,6 +1,12 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#opinion {
+	border: solid 1px #C6B393;
+	padding: 20px 4px 0px 4px;
+	margin: 50px 0px 40px 0px;
+}
+
 #overview {
 	clear: both;
 	border: solid 1px #C6B393;
@@ -105,7 +111,7 @@
 	background-color: #00946D;
 }
 
-#book .btn {
+#book {
 	float: right;
 	margin-top: 20px;
 }
@@ -266,26 +272,25 @@
 	padding-left: 0;
 }
 
-#reviews img {
+#opinion img {
 	float: left;
 	margin-right: 15px;
 }
 
-#reviews p {
+#opinion p {
 	font-size: 1.2rem;
 	text-transform: none;
 	text-align: left;
 }
 
-#reviews p:last-of-type {
+#opinion p:last-of-type {
 	color: #444;
 }
 
-#reviews hr {
+#opinion hr {
 	margin: 25px 0 10px 0;
 	width: 40px;
-	border-top: 1px solid #444;
-	background-color: #fff;
+	background-color: #444;
 }
 
 .reviews {
