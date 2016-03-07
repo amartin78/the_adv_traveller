@@ -1,5 +1,55 @@
-<div class="container">
-  <h4>User</h4>
-  <p><%= current_user.email %></p>
-  <p><%= link_to "Edit profile", edit_user_registration_path %></p>
+<div class="container" id="profile">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <ul>
+        <li>
+          <h3 class="panel-title">My Profile</h3>
+        </li>
+        <li>
+          <%#= button_tag("Edit", {class: "btn btn-success btn-xs"}) %>
+          <button class="btn btn-success btn-xs" onclick="">Edit</button>
+        </li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <div>
+        <label>Name</label>
+        <p id="usr_name">Antonio Martin</p>
+        <label type="input" value="Antonio"></label>
+      </div>
+      <div>
+        <label>Email</label>
+        <p><%= current_user.email %></p>
+      </div>
+      <div>
+        <label>Address 1</label>
+        <p>48,Calderon Road</p>
+      </div>
+      <div>
+        <label>Address 2</label>
+        <p></p>
+      </div>
+      <div>
+        <label>City</label>
+        <p>London</p>
+      </div>
+      <div>
+        <label>Country</label>
+        <p>United Kingdom</p>
+      </div>
+      <div>
+        <label>Postal Code</label>
+        <p>E11 4EU</p>
+      </div>
+      <div>
+        <label>Telephone</label>
+        <p>07710130116</p>
+      </div>
+      <div>
+        <label>Date of Birth</label>
+        <p>18 January, 1978</p>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Edit", edit_user_registration_path %>
 </div>

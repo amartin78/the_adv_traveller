@@ -12,7 +12,7 @@
 	margin: 40px auto;
 }
 
-#signin label, #signup label {
+#signin label, #signup label, #profile label {
 	font-weight: normal;
 }
 
@@ -26,5 +26,42 @@
 	width: 70%;
 }
 
-.split-left {
+#profile {
+	width: 30%;
+	margin: 40px auto;
 }
+
+#profile p {
+	display: inline;
+}
+
+#profile label {
+	width: 30%;
+	margin-right: 15px;
+	text-align: right;
+}
+
+#profile ul {
+	/*list-style-type: none;*/
+	margin: 0;
+}
+
+#profile button {
+	margin: 0 0 0 15px;
+	background-color: #bf7c61;
+	border-color: #bf7c61;
+	/*float: right;*/
+}
+
+#profile .panel-heading ul li {
+	display: inline;
+}
+
+#profile h3 {
+	float: left;
+	margin-top: 2px;
+	/*width: 50%;*/
+}
+
+
+
