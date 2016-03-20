@@ -23,8 +23,10 @@
                   <li><%= link_to 'Admin Dashboard', rails_admin_path %></li>
                 <% else %>
                   <li><%= link_to 'Profile', user_path(current_user.id) %></li>
-                  <li><a>My Bookings</a></li>
-                  <li><a>My Photos</a></li>
+                  <!-- <li><a>My Bookings</a></li> -->
+                  <!-- <li> -->
+                    <%#= link_to 'My Photos', photos_path %>
+                  <!-- </li> -->
                 <% end %>
                 <hr>
                 <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>

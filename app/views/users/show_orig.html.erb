@@ -1,0 +1,101 @@
+<% name = 'Antonio'  %>
+<% address1 = '48,Calderon road' %>
+<% address2 = '' %>
+<% city = 'London' %>
+<% country = 'United Kingdom' %>
+<% postcode = 'E11 4EU' %>
+<% phone = '07710130116' %>
+<% dob = '18/01/1978' %>
+<div class="container" id="profile">
+  <div class="panel panel-info">
+    <div class="panel-heading clearfix">
+      <div class="col-md-6">
+        <h3 class="panel-title">My Profile</h3>
+      </div>
+      <div class="col-md-6">
+        <ul>
+          <li>
+            <button class="btn btn-success btn-xs" id="usr_edit" onclick="edit_users()">Edit</button>
+          </li>
+          <li>
+            <button class="btn btn-success btn-xs" id="usr_cancel" onclick="cancel()">Cancel</button>
+          </li>
+          <li>
+            <button class="btn btn-success btn-xs" id="usr_save" onclick="save()">Save</button>
+          </li>
+        </ul>
+      </div>    
+    </div>
+    <div class="panel-body">
+
+      <%#= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+        <div>
+          <label>Name</label>
+          <p id="usr_name"><%= name %></p>
+          <input type="text" value="<%= name %>" size="" id="usr_name_edit"></input>
+        </div>
+        <div>
+          <label>Email</label>
+          <p id="usr_email"><%= current_user.email %></p>
+          <input type="text" value="<%= current_user.email %>" size="" id="usr_email_edit"></input>
+        </div>
+        <div>
+          <label>Address 1</label>
+          <p id="usr_add1"><%= address1 %></p>
+          <input type="text" value="<%= address1 %>" size="" id="usr_add1_edit"></input>
+        </div>
+        <div>
+          <label>Address 2</label>
+          <p id="usr_add2"><%= address2 %></p>
+          <input type="text" value="<%= address2 %>" size="" id="usr_add2_edit"></input>
+        </div>
+        <div>
+          <label>City</label>
+          <p id="usr_city"><%= city %></p>
+          <input type="text" value="<%= city %>" size="" id="usr_city_edit"></input>
+        </div>
+        <div>
+          <label>Country</label>
+          <p id="usr_country"><%= country %></p>
+          <input type="text" value="<%= country %>" size="" id="usr_country_edit"></input>
+        </div>
+        <div>
+          <label>Postal Code</label>
+          <p id="usr_postcode"><%= postcode %></p>
+          <input type="text" value="<%= postcode %>" size="" id="usr_postcode_edit"></input>
+        </div>
+        <div>
+          <label>Telephone</label>
+          <p id="usr_phone"><%= phone %></p>
+          <input type="text" value="<%= phone %>" size="" id="usr_phone_edit"></input>
+        </div>
+        <div>
+          <label>Date of Birth</label>
+          <p id="usr_dob"><%= dob %></p>
+          <input type="text" value="<%= dob %>" size="" id="usr_dob_edit"></input>
+        </div>
+
+        <div><%#= f.submit "Save" %></div>
+
+      <%# end %>
+    </div>
+  </div>
+
+
+
+  <script>
+    document.getElementById('usr_name_edit').style.display = 'none';
+    document.getElementById('usr_email_edit').style.display = 'none';
+    document.getElementById('usr_add1_edit').style.display = 'none';
+    document.getElementById('usr_add2_edit').style.display = 'none';
+    document.getElementById('usr_city_edit').style.display = 'none';
+    document.getElementById('usr_country_edit').style.display = 'none';
+    document.getElementById('usr_postcode_edit').style.display = 'none';
+    document.getElementById('usr_phone_edit').style.display = 'none';
+    document.getElementById('usr_dob_edit').style.display = 'none';
+    document.getElementById('usr_save').style.display = 'none';
+  document.getElementById('usr_cancel').style.display = 'none';
+  </script>
+  <%= link_to "Edit", edit_user_registration_path %>
+</div>

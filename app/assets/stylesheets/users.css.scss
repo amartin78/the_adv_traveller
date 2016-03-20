@@ -2,9 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container#signin {
-	width: 30%;
-	margin: 40px auto;
+#signin, #signup, #myprofile, #edMyProfile {
+	margin-top: 40px;
+}
+
+.checkbox-inline label, .radio-inline label {
+	font-weight: 400;
+}
+
+.form-control-static {
+	min-height: 25px;
+	max-height: 30px;
+}
+
+#edMyProfile em, #signup em {
+	margin: -12px 0px 15px 15px;
 }
 
 .container#signup {
@@ -12,18 +24,10 @@
 	margin: 40px auto;
 }
 
-#signin label, #signup label, #profile label {
-	font-weight: normal;
-}
-
 .container#signup select {
 	background-color: #FFF;
 	color: #444;
 	width: 70px;
-}
-
-.btn#signin {
-	width: 70%;
 }
 
 #profile {
@@ -42,26 +46,50 @@
 }
 
 #profile ul {
-	/*list-style-type: none;*/
 	margin: 0;
 }
 
 #profile button {
-	margin: 0 0 0 15px;
+	margin: 0 0 0 5px;
 	background-color: #bf7c61;
 	border-color: #bf7c61;
-	/*float: right;*/
+	float: right;
 }
 
-#profile .panel-heading ul li {
+#profile .panel-heading li {
 	display: inline;
 }
 
 #profile h3 {
-	float: left;
 	margin-top: 2px;
-	/*width: 50%;*/
 }
+
+#profile [class*='col'] {
+	padding: 0;
+}
+
+#ch-password {
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+.form-group {
+	margin: 0 15px 15px 15px;
+}
+
+.form-horizontal .form-group {
+	margin-bottom: 0;
+}
+
+.bg-primary {
+	padding: 15px 0;
+	text-align: center;
+}
+
+.page-header {
+	border-bottom: none;
+}
+
 
 
 

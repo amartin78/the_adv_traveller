@@ -6,4 +6,6 @@ class PagesController < ApplicationController
   end
   def brochure
   end
+  def myphotos
+  end
 end

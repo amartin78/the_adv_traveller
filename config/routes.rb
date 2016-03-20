@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'pages/brochure'
+  get 'pages/myphotos'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => {:registrations => "registrations"}, :path => '', :path_names => { :sign_in=>'login', :sign_out=>'logout' }
@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   get 'blog', to: 'articles#index'
 
   get 'brochure', to: 'pages#brochure'
+
+  get 'photos', to: 'pages#myphotos'
+
+  # get 'pages/brochure'
 
   # get 'payment', to: 'payments#create'
 

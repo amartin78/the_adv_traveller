@@ -1,49 +1,30 @@
 <% @body_id='signup' %>
-<div class="container" id="signup">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">Register</h3>
+<div class="col-md-4 col-md-push-4">
+  <%= form_for(resource, as: resource_name, builder: BootstrapFormBuilder, url: registration_path(resource_name), html: { id: 'signup'}) do |f| %>
+    <%= devise_error_messages! %>
+    <h4 class="bg-primary">Register</h4>
+    <div class="form-group">
+      <label for="usr_title">Title</label>
+      <select class="form-control" autofocus="true">
+        <option>Mr.</option>
+        <option>Mrs.</option>
+        <option>Miss.</option>
+        <option>Ms.</option>
+      </select>
     </div>
-    <div class="panel-body">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-       <div>
-          <%= label_tag(:title, "Title") %>
-          <select>
-            <option>Mr.</option>
-            <option>Mrs.</option>
-            <option>Miss.</option>
-            <option>Ms.</option>
-          </select>
-        </div>
-        <div>
-          <%= label_tag(:email, "First Name") %>
-          <%= text_field_tag(:fname, nil,{ placeholder:'First Name' }) %>
-        </div>
-        <div>
-          <%= label_tag(:lname, "Last Name") %>
-          <%= text_field_tag(:lname, nil,{ placeholder:'Last Name' }) %>
-        </div>
-        <div>
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-        <div>
-          <%= f.label :password %><%= f.password_field :password, autocomplete: "off" %><br>
-          <% if @validatable %>
-            <i>(<%= @minimum_password_length %> characters minimum)</i>
-          <% end %>
-        </div>
-
-        <div>
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-        <div>
-          <%= submit_tag("Create Account", {class: "btn btn-success btn-block"}) %>
-        </div>
-      <% end %>
-      <%= render "users/shared/links" %>
+    <div class="form-group">
+      <label for="usr_fname">First Name</label>
+      <input type="text" class="form-control" id="usr_fname" placeholder="First Name">
     </div>
-  </div>
-</div>
+    <div class="form-group">
+      <label for="usr_lname">Last Name</label>
+      <input type="text" class="form-control" id="usr_lname" placeholder="Last Name">
+    </div>
+    <%= f.email_field(:email) %>
+    <%= f.password_field(:password) %>
+    <em class="help-block">(<%= @minimum_password_length %> characters minimum)</em>
+    <%= f.password_field(:password_confirmation, label: "Password confirmation") %>
+    <%= f.submit("Create Account") %>
+    <p class="pull-left"><%= render "users/shared/links" %></p>
+  <% end %>
+</div><!-- .col-md-4 -->

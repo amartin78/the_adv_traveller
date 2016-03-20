@@ -1,55 +1,51 @@
-<div class="container" id="profile">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <ul>
-        <li>
-          <h3 class="panel-title">My Profile</h3>
-        </li>
-        <li>
-          <%#= button_tag("Edit", {class: "btn btn-success btn-xs"}) %>
-          <button class="btn btn-success btn-xs" onclick="">Edit</button>
-        </li>
-      </ul>
-    </div>
-    <div class="panel-body">
-      <div>
-        <label>Name</label>
-        <p id="usr_name">Antonio Martin</p>
-        <label type="input" value="Antonio"></label>
+<% name = 'Antonio M'  %>
+<% address1 = '48,Calderon road' %>
+<% address2 = '' %>
+<% city = 'London' %>
+<% country = 'United Kingdom' %>
+<% postcode = 'E11 4EU' %>
+<% phone = '07710130116' %>
+<% dob = '18/01/1978' %>
+
+<div class="row">
+  <div class="col-md-4 col-md-push-4">
+    <form class="form-horizontal" id="myprofile">
+      <h4 class="bg-primary">My Profile</h4>
+      <div class="form-group">
+        <label class="col-xs-4 control-label">Name</label>
+        <div class="col-xs-8">
+          <p class="form-control-static"><%= name %></p>
+        </div>
       </div>
-      <div>
-        <label>Email</label>
-        <p><%= current_user.email %></p>
+      <div class="form-group">
+        <label class="col-xs-4 control-label">Email</label>
+        <div class="col-xs-8">
+          <p class="form-control-static"><%= current_user.email %></p>
+        </div>
       </div>
-      <div>
-        <label>Address 1</label>
-        <p>48,Calderon Road</p>
+      <div class="form-group">
+        <label class="col-xs-4 control-label">Address</label>
+        <div class="col-xs-8">
+          <p class="form-control-static">48, Calderon Road</p>
+          <p class="form-control-static">Leytonstone</p>
+          <p class="form-control-static">E11 4EU</p>
+          <p class="form-control-static">London</p>
+          <p class="form-control-static">United Kingdom</p>
+        </div>
       </div>
-      <div>
-        <label>Address 2</label>
-        <p></p>
+      <div class="form-group">
+        <label class="col-xs-4 control-label">Phone</label>
+        <div class="col-xs-8">
+          <p class="form-control-static">07710130116</p>
+        </div>
       </div>
-      <div>
-        <label>City</label>
-        <p>London</p>
+      <div class="form-group">
+        <label class="col-xs-4 control-label">Date of birth</label>
+        <div class="col-xs-8">
+          <p class="form-control-static">18/01/1978</p>
+        </div>
       </div>
-      <div>
-        <label>Country</label>
-        <p>United Kingdom</p>
-      </div>
-      <div>
-        <label>Postal Code</label>
-        <p>E11 4EU</p>
-      </div>
-      <div>
-        <label>Telephone</label>
-        <p>07710130116</p>
-      </div>
-      <div>
-        <label>Date of Birth</label>
-        <p>18 January, 1978</p>
-      </div>
-    </div>
-  </div>
-  <%= link_to "Edit", edit_user_registration_path %>
+      <div class="pull-left"><%= link_to "Edit profile", edit_user_registration_path %></div>
+    </form>
+  </div><!-- .col-md-4 -->
 </div>
