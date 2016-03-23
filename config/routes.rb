@@ -27,19 +27,11 @@ Rails.application.routes.draw do
 
   get 'faq', to: 'pages#faq'
 
-  get 'form_input', to: 'form_example#form_input'
-
-  get 'form_output', to: 'form_example#form_output'
-
   get 'blog', to: 'articles#index'
 
   get 'brochure', to: 'pages#brochure'
 
   get 'photos', to: 'pages#myphotos'
-
-  # get 'pages/brochure'
-
-  # get 'payment', to: 'payments#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

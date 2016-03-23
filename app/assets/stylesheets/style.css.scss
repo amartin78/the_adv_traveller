@@ -121,40 +121,6 @@ ul {
 	clear:both;
 }
 
-.col-md-5 a {
-  text-transform: lowercase;
-  font-size: 1.5rem;
-}
-
-#contact-form {
-  clear: both;
-  padding-bottom: 20px;
-  border: solid 1px;
-}
-
-#contact-form  p {
-  margin-left: 30px;
-  text-align: left;
-}
-
-#contact-form input[type="text"],#contact-form input[type="email"],#contact-form input[type="url"],
-#contact-form select {
-  width: 250px;
-  }textarea{
-    width: 320px;
-}
-
-#contact-form input[type="submit"] {
-  margin-left: 180px;
-  width: 135px;
-}
-
-#contact-form label {
-  margin-right: 10px;
-  text-align: left;
-  width: 60px;
-}
-
 #content {
   clear: both;
 }
@@ -169,7 +135,7 @@ footer .container  {
 }
 
 .container .row {
-	margin-bottom: 50px;
+	margin-bottom: 10px;
 }
 
 .container h1, h2, h3, h4, h5, h6 {

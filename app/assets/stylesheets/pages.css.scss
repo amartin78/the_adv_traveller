@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#contact-info .bg-primary {
+	background-color: #c6b393;
+}
+
+#contact-form input[type="email"] {
+	font-size: 1.2rem;
+}
+
 #enews {
 	color: #fff;
 }
