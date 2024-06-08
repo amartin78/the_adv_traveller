@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.1.2'
+gem 'rails'
 # gem 'brakeman', :require => false
 
 # Use sqlite3 as the database for Active Record
@@ -40,10 +40,10 @@ gem 'rails', '7.1.2'
 # gem 'byebug'
 
 # Stripe
-gem 'stripe'
+# gem 'stripe'
 
 # Dalli
-gem 'dalli'
+# gem 'dalli'
 
 # Rollbar
 # gem 'rollbar'

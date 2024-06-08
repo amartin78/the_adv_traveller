@@ -81,7 +81,6 @@ GEM
     concurrent-ruby (1.3.1)
     connection_pool (2.4.1)
     crass (1.0.6)
-    dalli (3.2.8)
     date (3.3.4)
     drb (2.2.1)
     erubi (1.12.0)
@@ -173,7 +172,6 @@ GEM
     reline (0.5.8)
       io-console (~> 0.5)
     stringio (3.1.0)
-    stripe (11.6.0)
     thor (1.3.1)
     timeout (0.4.1)
     tzinfo (2.0.6)
@@ -193,9 +191,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  dalli
-  rails (= 7.1.2)
-  stripe
+  rails
 
 BUNDLED WITH
    2.5.11
