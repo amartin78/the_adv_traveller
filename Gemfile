@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
+gem 'rails', '7.1.2'
 # gem 'brakeman', :require => false
 
 # Use sqlite3 as the database for Active Record
